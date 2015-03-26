@@ -9,7 +9,7 @@ package GUI;
  *
  * @author Marco
  */
-public class VentanaPrincipal extends javax.swing.JPanel {
+public class VentanaPrincipal extends javax.swing.JFrame {
 
     /**
      * Creates new form VentanaPrincipal
@@ -27,32 +27,122 @@ public class VentanaPrincipal extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        BarraMenu = new javax.swing.JMenuBar();
-        Paciente = new javax.swing.JMenu();
-        Ejercicios = new javax.swing.JMenu();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
+        barraMenu = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
 
-        Paciente.setText("File");
-        BarraMenu.add(Paciente);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Fitness");
 
-        Ejercicios.setText("Edit");
-        BarraMenu.add(Ejercicios);
+        jDesktopPane1.setBackground(new java.awt.Color(153, 255, 255));
+        jDesktopPane1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jDesktopPane1.setForeground(new java.awt.Color(0, 102, 102));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 675, Short.MAX_VALUE)
+        );
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 340, Short.MAX_VALUE)
+        );
+
+        barraMenu.setBackground(new java.awt.Color(0, 102, 102));
+        barraMenu.setBorder(null);
+        barraMenu.setForeground(new java.awt.Color(0, 102, 102));
+        barraMenu.setBorderPainted(false);
+
+        jMenu1.setBackground(new java.awt.Color(0, 102, 102));
+        jMenu1.setForeground(new java.awt.Color(255, 255, 255));
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/usuarios.png")));
+        jMenu1.setText("Paciente");
+
+        jMenuItem2.setBackground(new java.awt.Color(204, 102, 0));
+        jMenuItem2.setText("Crear Usuario");
+        jMenu1.add(jMenuItem2);
+
+        jMenuItem3.setBackground(new java.awt.Color(204, 102, 0));
+        jMenuItem3.setText("Consultar usuario");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem3);
+
+        barraMenu.add(jMenu1);
+
+        jMenu2.setBackground(new java.awt.Color(0, 102, 102));
+        jMenu2.setForeground(new java.awt.Color(255, 255, 255));
+        jMenu2.setText("Ejercicios");
+        barraMenu.add(jMenu2);
+
+        setJMenuBar(barraMenu);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jDesktopPane1)
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new VentanaPrincipal().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuBar BarraMenu;
-    private javax.swing.JMenu Ejercicios;
-    private javax.swing.JMenu Paciente;
+    private javax.swing.JMenuBar barraMenu;
+    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     // End of variables declaration//GEN-END:variables
 }
