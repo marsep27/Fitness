@@ -27,29 +27,31 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        escritorio = new javax.swing.JDesktopPane();
         barraMenu = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        menuPaciente = new javax.swing.JMenu();
+        crearPaciente = new javax.swing.JMenuItem();
+        consultarPaciente = new javax.swing.JMenuItem();
+        menuEjercicios = new javax.swing.JMenu();
+        acercade = new javax.swing.JMenu();
+        salir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Fitness");
 
-        jDesktopPane1.setBackground(new java.awt.Color(153, 255, 255));
-        jDesktopPane1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jDesktopPane1.setForeground(new java.awt.Color(0, 102, 102));
+        escritorio.setBackground(new java.awt.Color(153, 255, 255));
+        escritorio.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        escritorio.setForeground(new java.awt.Color(0, 102, 102));
 
-        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
-        jDesktopPane1.setLayout(jDesktopPane1Layout);
-        jDesktopPane1Layout.setHorizontalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
+        escritorio.setLayout(escritorioLayout);
+        escritorioLayout.setHorizontalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 675, Short.MAX_VALUE)
         );
-        jDesktopPane1Layout.setVerticalGroup(
-            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 340, Short.MAX_VALUE)
+        escritorioLayout.setVerticalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 319, Short.MAX_VALUE)
         );
 
         barraMenu.setBackground(new java.awt.Color(0, 102, 102));
@@ -57,30 +59,48 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         barraMenu.setForeground(new java.awt.Color(0, 102, 102));
         barraMenu.setBorderPainted(false);
 
-        jMenu1.setBackground(new java.awt.Color(0, 102, 102));
-        jMenu1.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/usuarios.png")));
-        jMenu1.setText("Paciente");
+        menuPaciente.setBackground(new java.awt.Color(0, 102, 102));
+        menuPaciente.setForeground(new java.awt.Color(255, 255, 255));
+        menuPaciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/paciente.png"))); // NOI18N
+        menuPaciente.setText("Paciente");
+        menuPaciente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        menuPaciente.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 14)); // NOI18N
 
-        jMenuItem2.setBackground(new java.awt.Color(204, 102, 0));
-        jMenuItem2.setText("Crear Usuario");
-        jMenu1.add(jMenuItem2);
+        crearPaciente.setBackground(new java.awt.Color(204, 102, 0));
+        crearPaciente.setText("Crear Paciente");
+        menuPaciente.add(crearPaciente);
 
-        jMenuItem3.setBackground(new java.awt.Color(204, 102, 0));
-        jMenuItem3.setText("Consultar usuario");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        consultarPaciente.setBackground(new java.awt.Color(204, 102, 0));
+        consultarPaciente.setText("Consultar Usuario");
+        consultarPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                consultarPacienteActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem3);
+        menuPaciente.add(consultarPaciente);
 
-        barraMenu.add(jMenu1);
+        barraMenu.add(menuPaciente);
 
-        jMenu2.setBackground(new java.awt.Color(0, 102, 102));
-        jMenu2.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu2.setText("Ejercicios");
-        barraMenu.add(jMenu2);
+        menuEjercicios.setBackground(new java.awt.Color(0, 102, 102));
+        menuEjercicios.setForeground(new java.awt.Color(255, 255, 255));
+        menuEjercicios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/ejercicio.png"))); // NOI18N
+        menuEjercicios.setText("Ejercicios");
+        menuEjercicios.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 14)); // NOI18N
+        barraMenu.add(menuEjercicios);
+
+        acercade.setBackground(new java.awt.Color(0, 102, 102));
+        acercade.setForeground(new java.awt.Color(255, 255, 255));
+        acercade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/acerca de.jpg"))); // NOI18N
+        acercade.setText("Acerca de");
+        acercade.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 14)); // NOI18N
+        barraMenu.add(acercade);
+
+        salir.setBackground(new java.awt.Color(0, 102, 102));
+        salir.setForeground(new java.awt.Color(255, 255, 255));
+        salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/salir.jpg"))); // NOI18N
+        salir.setText("Salir");
+        salir.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 14)); // NOI18N
+        barraMenu.add(salir);
 
         setJMenuBar(barraMenu);
 
@@ -88,19 +108,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(escritorio, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDesktopPane1)
+            .addComponent(escritorio)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void consultarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarPacienteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_consultarPacienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,11 +158,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu acercade;
     private javax.swing.JMenuBar barraMenu;
-    private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem consultarPaciente;
+    private javax.swing.JMenuItem crearPaciente;
+    private javax.swing.JDesktopPane escritorio;
+    private javax.swing.JMenu menuEjercicios;
+    private javax.swing.JMenu menuPaciente;
+    private javax.swing.JMenu salir;
     // End of variables declaration//GEN-END:variables
 }
