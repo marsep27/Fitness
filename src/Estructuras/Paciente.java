@@ -98,13 +98,13 @@ public class Paciente {
     
     public void verPaciente(){
         System.out.println("********************************************");
-        System.out.println("Nombre: "+ nombre);
-        System.out.println("Numero de identificacion: "+ numIdentificacion);
-        System.out.println("Numero de telefono: "+ telefono);
-        System.out.println("Correo electronico: "+ correoElectronico);
-        System.out.println("Fecha de nacimiento: "+ fechaNacimiento);
-        System.out.println("Programas: ");
-        System.out.println("Mediciones: ");
+        System.out.println("1.Nombre: "+ nombre);
+        System.out.println("2.Numero de identificacion: "+ numIdentificacion);
+        System.out.println("3.Numero de telefono: "+ telefono);
+        System.out.println("4.Correo electronico: "+ correoElectronico);
+        System.out.println("5.Fecha de nacimiento: "+ fechaNacimiento);
+        System.out.println("6.Programas: ");
+        System.out.println("7.Mediciones: ");
     }
     
     
