@@ -66,16 +66,21 @@ public class Administrador {
                         System.out.println("Elija el paciente que quiere modificar: ");
                         int client = in.nextInt();
                         paciente1 =listaPacientes.get(client-1);
+                        boolean volver = true;
+                        while (volver == true){
                         System.out.println(">>Datos del cliente seleccionado");
                         paciente1.verPaciente();
                         int dato = in.nextInt();
+                        boolean salir = false;
+                        while(salir == false){
                         switch(dato){
                             case 1: 
                                 System.out.println(">>Cambiando nombre");
                                 System.out.println("Ingrese el nuevo nombre: ");
                                 String nom = in.nextLine();
-                                
                                 paciente1.setNombre(nom);
+                                System.out.println("Se actualizo exitosamente el nombre");
+                                volver = false;
                             case 2:
                                 System.out.println(">>Cambiando el numero de identificacion");
                                 System.out.println("Ingrese el nuevo numero de identificacion: ");
@@ -83,31 +88,48 @@ public class Administrador {
                                 boolean i1 = vericarCedula(iden);
                                 if(i1){       
                                 paciente1.setNumIdentificacion(iden);
-                                }else{System.out.println("Entrada invalida");}
+                                System.out.println("Se actualizo exitosamente el numero de identificacion");
+                                volver = false;
+                                }else{System.out.println("Entrada invalida"); salir = true;}
                              
                             case 3: 
                                 System.out.println(">>Cambiando el numero de telefono");
                                 System.out.println("Ingrese el nuevo numero de telefono:");
                                 String tel = in.nextLine();
+                                boolean i2 = vericarTel(tel);
+                                if(i2){
                                 paciente1.setTeléfono(tel);
+                                System.out.println("Se actualizo exitosamente el telefono");
+                                volver = false;
+                                }else{System.out.println("Entrada invalida"); salir = true;}
                             case 4: 
                                 System.out.println(">>Cambiando correo electronico");
                                 System.out.println("Ingrese el nuevo correo electronico: ");
                                 String co = in.nextLine();
+                                boolean  i3 = vericarCorreo(co);
+                                if(i3){
                                 paciente1.setCorreoElectrónico(co);
+                                System.out.println("Se actualizo exitosamente el correo");
+                                volver = false;
+                                }else{System.out.println("Entrada invalida"); salir = true;}
                             case 5: 
                                 System.out.println("Cambiando la fecha de nacimiento");
                                 System.out.println("Ingrese la nueva fecha de nacimiento: ");
                                 String nac = in.nextLine();
                                 paciente1.setFechaNacimiento(nac);
+                                System.out.println("Se actualizo exitosamente la fecha de nacimiento");
+                                volver = false;
                             case 6:
                                 System.out.println("El numero de programas no se puede modificar");
+                                volver = false;
                             case 7: 
                                 System.out.println("El numero de mediciones no se puede modificar");
+                                volver = false;
                         
-                        
+                            }
                 
                         }
+                      }
                     }
 
             }
