@@ -13,10 +13,29 @@ public class CircunferenciasCorporales {
     private double musloIzq; // muslo izquierdo- centimetros
     private double pantorrillaDer; // pantorrilla derecha- centimetros
     private double pantorrillaIzq; // pantorrilla izquierda- centimetros
+    private String sexo;
+
+    public CircunferenciasCorporales(double cuello, double bicepsDer, double bicepsIzq, double pectoral, double espalda,
+                                        double Cintura1, double Cintura2, double Cintura3, double cadera, double musloDer,
+                                        double musloIzq, double pantorrillaDer, double pantorrillaIzq,String pSexo) {
+        this.cuello = cuello;
+        this.bicepsDer = bicepsDer;
+        this.bicepsIzq = bicepsIzq;
+        if(pSexo == "Hombre"){
+        this.pectoral = pectoral;}
+        this.espalda = espalda;
+        this.Cintura1 = Cintura1;
+        this.Cintura2 = Cintura2;
+        this.Cintura3 = Cintura3;
+        this.cadera = cadera;
+        this.musloDer = musloDer;
+        this.musloIzq = musloIzq;
+        this.pantorrillaDer = pantorrillaDer;
+        this.pantorrillaIzq = pantorrillaIzq;
+    }
     
 
-    public CircunferenciasCorporales() {
-    }
+    
 
     public double getCintura1() {
         return Cintura1;

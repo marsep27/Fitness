@@ -1,16 +1,25 @@
 package Estructuras;
 
 public class PlieguesCutaneos {
-    private double triceps;
-    private double subescapular;
-    private double abdomen;
-    private double iliaco;
-    private double muslo;
-    private double pantorrilla;
-    private double pectoral;// Disponible solo para hombre
+    private double triceps;//Medida en milimetros
+    private double subescapular;//Medida en milimetros
+    private double abdomen;//Medida en milimetros
+    private double iliaco;//Medida en milimetros
+    private double muslo;//Medida en milimetros
+    private double pantorrilla;//Medida en milimetros
+    private double pectoral;// Disponible solo para hombre//Medida en milimetros
 
-    public PlieguesCutaneos() {
+    public PlieguesCutaneos(double triceps, double subescapular, double abdomen, double iliaco, double muslo, double pantorrilla, double pectoral) {
+        this.triceps = triceps;
+        this.subescapular = subescapular;
+        this.abdomen = abdomen;
+        this.iliaco = iliaco;
+        this.muslo = muslo;
+        this.pantorrilla = pantorrilla;
+        this.pectoral = pectoral;
     }
+
+    
 
     public double getTriceps() {
         return triceps;
@@ -67,6 +76,12 @@ public class PlieguesCutaneos {
     public void setPectoral(double pectoral) {
         this.pectoral = pectoral;
     }
+
+    @Override
+    public String toString() {
+        return "PlieguesCutaneos{" + "triceps=" + triceps + ", subescapular=" + subescapular + ", abdomen=" + abdomen + ", iliaco=" + iliaco + ", muslo=" + muslo + ", pantorrilla=" + pantorrilla + ", pectoral=" + pectoral + '}';
+    }
+    
     
     
 }
