@@ -194,6 +194,9 @@ public class Administrador {
                         Iterator<String> i = cedula.iterator();//Iterador para recorrer la lista de numeros y signos
                         while(i.hasNext()){//Avanza un elemento en cada iteracion en la lista
                             String elem = i.next();//Guardamos el elemento que extre el iterador
+                            if (elem == "-"){
+                                cond = true;
+                            }
                             if(var.equals(elem)){//Comparamos cada elemento de la lista con cada elemento del numero entrante
                                 cond = true;
                             }

@@ -1,6 +1,10 @@
 package Estructuras;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /*
-ESPALDA
+ESPALDA/
 1. Dominadas prono
 2. Dominadas supino
 3. Dominadas neutro
@@ -48,7 +52,7 @@ MUSLO
 13. Sentadilla con barra
 14. Sentadilla en máquina Smith
 15. Step con mancuernas en banca
-HOMBRO
+HOMBRO/
 1. Press hombro militar con barra
 2. Press hombro militar con mancuernas
 3. Press hombro militar con mancuernas alterno
@@ -61,7 +65,7 @@ HOMBRO
 10. Flexión Anterior de hombro mancuernas
 11. Retracción escapular mancuernas
 12. Retracción escapular máquina
-BICEPS-BRAZOS
+BICEPS-BRAZOS/
 1. Curl bíceps barra Z
 2. Curl bíceps mancuernas
 3. Curl bíceps mancuernas alterno
@@ -71,7 +75,7 @@ BICEPS-BRAZOS
 7. Curl bíceps banco Scott con barra
 8. Curl bíceps banco Scott individua con mancuerna
 9. Curl bíceps Prono con barra
-TRICEPS-BRAZOS
+TRICEPS-BRAZOS/
 1. Extensión tríceps polea
 2. Extensión individual tríceps polea 
 3. Extensión tríceps copa mancuerna individual
@@ -86,7 +90,7 @@ GASTROGNEMIOS-PIERNAS
 2. Flexión plantar mancuerna individual
 3. Flexión plantar libre
 4. Soleos
-ANTEBRAZO
+ANTEBRAZO/
 1. Curl de muñecas con mancuerna
 2. Curl de muñecas con barra
 PLIOMETRÍA-PIERNAS
@@ -114,7 +118,7 @@ ABDOMEN
 5. Abdomen completo
 
 
-PECHO-TRICEPS
+PECHO-TRICEPS/
 press banca
 press banca inclinado
 press banca declinado
@@ -124,7 +128,7 @@ extension triceps en polea
 press frances
 fondos
 
-ESPALDA-BICEPS
+ESPALDA-BICEPS/
 dominas
 remo horizontal a una mano con mancuerna
 remo sentado en polea con agarre abierto
@@ -135,7 +139,7 @@ curl biceps en banco scoot
 curl inclinado con mancuernas
 curl concentradas
 
-HOMBROS-ANTEBRAZOS
+HOMBROS-ANTEBRAZOS/
 press frontal con barra
 pajaros     2X10
 press arnold
@@ -159,7 +163,26 @@ public class Ejercicio {
     private int Repeticiones;
     private int duracion;
     private Maquina maquina;
-    
+    public ArrayList<String> listEjerciciosPartsuperior = new ArrayList<>(//Ejercicios de la parte superior del cuerpo(hombros,brazos,espalda,biceps,triceps...)
+      Arrays.asList("press frontal con barra","pajaros","press arnold","elevaciones laterales , acostado de lado","encogimientos con mancuernas remo al cuello con barra Z",
+                    "curl antebrazo supinacion frontales","curl antebrazo traseros","dominas","remo horizontal a una mano con mancuerna",
+                    "remo sentado en polea con agarre abierto","remo con polea con remo cerrado","polea al pecho","curl biceps con barra recta",
+                    "curl biceps en banco scoot","curl inclinado con mancuernas","curl concentradas","press banca","press banca inclinado",
+                    "press banca declinado","aperturas con mancuernas","pullover","extension triceps en polea","press frances","fondos",
+                    "Curl de muñecas con mancuerna","Curl de muñecas con barra","Extensión tríceps polea","Extensión individual tríceps polea",
+                    "Extensión tríceps copa mancuerna individual","Extensión tríceps copa polea","Extensión individual tríceps polea invertido",
+                    "Extensión individual tríceps (patada de mula)","Press para tríceps con barra","Press francés barra Z","Press francés mancuernas",
+                    "Curl bíceps barra Z","Curl bíceps mancuernas","Curl bíceps mancuernas alterno","Curl bíceps martillo",
+                    "Curl bíceps concentrado mancuerna","Curl bíceps polea","Curl bíceps banco Scott con barra","Curl bíceps banco Scott individua con mancuerna",
+                    "Curl bíceps Prono con barra","Press hombro militar con barra","Press hombro militar con mancuernas","Press hombro militar con mancuernas alterno",
+                    "Press hombro militar en máquina","Abducción lateral de hombro con mancuerna","Abducción lateral de hombro individual con mancuerna",
+                    "Abducción posterior de hombro en máquina","Abducción posterior de hombro con mancuernas","Abducción posterior de hombro individual con mancuerna",
+                    "Flexión Anterior de hombro mancuernas","Retracción escapular mancuernas","Retracción escapular máquina","Dominadas prono","Dominadas supino",
+                    "Dominadas neutro","Polea espalda frontal con polea","Polea espalda supino con polea","Polea espalda frontal individual con polea","Pull down polea ",
+                    "Remo espalda con polea","Remo espalda individual con polea","Remo espalda con polea alterno","Remo espalda con mancuerna individual",
+                    "Remo espalda con mancuerna bilateral","Remo T para espalda ","Trapecio (Elevación de hombros) con barra","Trapecio (Elevación de hombros) con mancuernas"));
+    public ArrayList<String> listEjerciciosPartMedia = new ArrayList<>(//Ejercicios de la parte media del cuerpo(abdominales,)
+      Arrays.asList());
     public Ejercicio(String Nombre, int Series, int Repeticiones, int duracion, Maquina maquina) {
         this.Nombre = Nombre;
         this.Series = Series;

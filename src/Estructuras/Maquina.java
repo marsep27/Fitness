@@ -1,4 +1,8 @@
 package Estructuras;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /*
 Caminadora
 Una persona de 150 lb (68 kg) puede quemar 100 calorías con un ejercicio moderadamente complejo de 30 minutos. Piernas
@@ -36,10 +40,9 @@ public class Maquina {
     private String AreaTrabajada;
     private String Tipo;
     private String Descripcion;
-    
-    public Maquina(){
-        
-    }
+    public ArrayList<String> listMaquinas = new ArrayList<>(//Maquinas del gimnacio
+      Arrays.asList("Pelota de balance","Mini trampolín","Escaladora","Remadora","Prensa de piernas","Mesa de pilates"
+                    ,"Bicicleta de spinning","Bicicleta recostada","Elíptica","Caminadora","Sin maquina","Mancuernas","Ligas"));
     
     public Maquina(String pNombre, String pArea, String pTipo, String pDescripcion){
         Nombre = pNombre;
