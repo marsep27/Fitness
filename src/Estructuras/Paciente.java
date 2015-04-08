@@ -7,8 +7,7 @@
 package Estructuras;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
+import java.util.Scanner;
 
 /**
  *
@@ -21,17 +20,14 @@ public class Paciente {
     private String telefono;
     private String correoElectronico;
     private String fechaNacimiento;//NO se si sera string
-    public ArrayList<Paciente> listaPacientes = new ArrayList();
-    public ArrayList<String> num = new ArrayList<>(
-    Arrays.asList("0","1", "2", "3","4","5","6","7","8","9","-","(",")"));
-    public ArrayList<String> cedula = new ArrayList<>(
-    Arrays.asList("0","1", "2", "3","4","5","6","7","8","9","-"));
-    public ArrayList<String> correo = new ArrayList<>(
-    Arrays.asList("@","."));
-    public ArrayList<String> listCedulas = new ArrayList();
     public int cantProgramas = 0;
     public int cantMediciones = 0;
-
+    private static Mediciones medicion1;
+    public ArrayList<Mediciones> listaMediciones = new ArrayList();//Lista de mediciones
+    //public ArrayList<ProgramasEntrenamiento> listaProgramEntrena = new ArrayList();//Lista de programas de entrenamiento
+    Scanner in = new Scanner(System.in);
+    
+    
     public Paciente(String pNombre, String pSexo, String pNumIdentificacion, String pTelefono, String pCorreoElectrónico, String pFechaNacimiento) {
         this.nombre = pNombre;
         this.sexo = pSexo;
@@ -39,7 +35,7 @@ public class Paciente {
         this.telefono = pTelefono;
         this.correoElectronico = pCorreoElectrónico;
         this.fechaNacimiento = pFechaNacimiento; 
-        listCedulas.add(numIdentificacion);
+        
     }
 
     public String getCorreoElectrónico() {
@@ -100,77 +96,73 @@ public class Paciente {
         this.sexo = sexo;
     }
     
-    
-    public boolean verificarPaciente(String numCedula){
-        boolean cond = false;
-        Iterator<String> i = listCedulas.iterator();//Iterador para recorrer la lista de pacientes
-                while(i.hasNext()){//Avanza un elemento en cada iteracion en la lista
-                    String elem = i.next();//Guardamos el elemento que contenga el iterador
-                    if(numCedula.equals(elem)){//Comparamos cada numero de ced con el num ced entrante
-                        cond = true;
-                        System.out.println("El paciente ya existe");
-                        }            
-                }return cond;
-    }
-    public boolean vericarCedula(String numCedula){
-        boolean cond = false;//Condicion para determinar si cumple con las regleas
-            for (int j = 0; j< numCedula.length(); j++){//Ciclo para recorre cada elemento del string
-                String var = numCedula.substring(j, j+1);//En un intervalo de indices nos devuelve el elemento en  medio
-                Iterator<String> i = cedula.iterator();//Iterador para recorrer la lista de numeros y signos
-                while(i.hasNext()){//Avanza un elemento en cada iteracion en la lista
-                    String elem = i.next();//Guardamos el elemento que extre el iterador
-                    if(var.equals(elem)){//Comparamos cada elemento de la lista con cada elemento del numero entrante
-                        cond = true;
-                    }
-                }
-                if(cond != true){//Si el numero no coincide al menos con un elemento de la lista 
-                System.out.println("Cedula invalida"); //el num de telefono no es valido.
-                return false;
-                }
-            }
-            return true;//Si recorre todo el numero y esta bien retorna true
-    }
-    
-    public boolean vericarTel(String telefono){
-        boolean cond = false;// Si el numero esta bien
-        for (int j = 0; j< telefono.length(); j++){//Ciclo para recorre cada elemento del string
-            String var = telefono.substring(j, j+1);//En un intervalo de indices nos devuelve el elemento en  medio
-            Iterator<String> i = num.iterator();//Iterador para recorrer la lista de numeros y signos
-            while(i.hasNext()){//Avanza un elemento en cada iteracion en la lista
-                String elem = i.next();//Guardamos el elemento que extre el iterador
-                if(var.equals(elem)){//Comparamos cada elemento de la lista con cada elemento del numero entrante
-                    cond = true;
-                }
-            }
-            if(cond != true){//Si el numero no coincide al menos con un elemento de la lista 
-            System.out.println("Numero invalido");                 //el num de telefono no es valido.
-            return false;
-            }
-        }
-        return true;//Si recorre todo el numero y esta bien retorna true
-      }
-
-            
-    
-    public boolean vericarCorreo(String pCorreoElectrónico){
-        boolean cond = false;//Condicion para determinar si cumple con las regleas
-        int aparicion = 0; // Al final tienen que haber dos apariciones necesarias el @ y el .      
-        for (int j = 0; j< pCorreoElectrónico.length(); j++){//Ciclo para recorre cada elemento del string
-            String var = pCorreoElectrónico.substring(j, j+1);//En un intervalo de indices nos devuelve el elemento en  medio
-                String a = correo.get(0);//Guardamos el elemento @
-                String p = correo.get(1);// Guardamos el punto
-                if(var.equals(a)|| var.equals(p)){//Comparamos cada elemento de la lista con cada elemento del numero entrante
-                    aparicion += 1;
-                }
-            }
-            if(aparicion == 2){//Si el numero no coincide al menos con un elemento de la lista 
-                             //el correo no es valido.
-            return true;
-            }else{return false;}
-    }
-    
     public void obMedicion(){
-        System.out.println("Lista de mediciones: ");
+        System.out.println("");
+        System.out.println(">>Lista de mediciones\n");
+        System.out.println("Ingrese su estatura: \n *La medida debe estar en metros*\n");
+        double estatura = in.nextDouble();
+        System.out.println("Ingrese su peso: \n *La medida debe estar en kilogramos*\n");
+        double peso = in.nextDouble();
+        System.out.println("Ingrese su frecuencia cardiaca: \n *La medida debe estar en latidos por minuto*\n");
+        int frecCard = in.nextInt();
+        System.out.println("\tIngrese la medida del presion arterial.\n Son dos las cuales deben estar en milimetros de mercurio \n\t1.Sistolica: ");
+        int presArtSistolica = in.nextInt();
+        System.out.println("\n\t2.Diastolica: ");
+        int presArtDiastolica = in.nextInt();
+        
+        //PLIEGUES CUTANEOS 
+        System.out.println("****************************************************");
+        System.out.println(">>>> MEDICIONES DE LOS PLIEGUES CUTANEOS");
+        System.out.println("*Las siguentes medidas deben estar en milimetros*");
+        System.out.println("\tIngrese la medida del triceps: \n");
+        double triceps = in.nextDouble();
+        System.out.println("\tIngrese la medida del subescapular: \n");
+        double subescapular = in.nextDouble();
+        System.out.println("\tIngrese la medida del abdomen: \n");
+        double abdomen = in.nextDouble();
+        System.out.println("\tIngrese la medida del iliaco: \n");
+        double iliaco = in.nextDouble();
+        System.out.println("\tIngrese la medida del muslo: \n");
+        double muslo = in.nextDouble();
+        System.out.println("\tIngrese la medida de la pantorrilla: \n");
+        double pantorrilla = in.nextDouble();
+        System.out.println("\tIngrese la medida del pectoral: \n");
+        double pectoralPliegue = in.nextDouble();
+        System.out.println("****************************************************");
+        System.out.println(">>>>MEDICIONES DE LAS CIRCUNFENCIAS CORPORALES");
+        System.out.println("Las siguientes medidas deben estar en centimetros");
+        System.out.println("\tIngrese la medida del cuello: \n");
+        double cuello = in.nextDouble();
+        System.out.println("\tIngrese la medida del biceps derecho: \n");
+        double bicepsDer = in.nextDouble();
+        System.out.println("\tIngrese la medida del biceps izquierdo: \n");
+        double bicepsIzq = in.nextDouble();
+        System.out.println("\tIngrese la medida del pectoral solo para hombre: \n*si es mujer escriba 0*");
+        double pectoralH = in.nextDouble();
+        System.out.println("\tIngrese la medida de la espalda: \n");
+        double espalda = in.nextDouble();
+        System.out.println("\tIngrese la medida de la cintura se divide en 3\n\t1.Alta:");
+        double cintura1 = in.nextDouble();
+        System.out.println("\t2.Media\n"); 
+        double cintura2 = in.nextDouble();
+        System.out.println("\t3.Baja\n");
+        double cintura3 = in.nextDouble();
+        System.out.println("\tIngrese la medida de la cadera: \n");
+        double cadera = in.nextDouble();
+        System.out.println("\tIngrese la medida del muslo derecho: \n");
+        double musloDer = in.nextDouble();
+        System.out.println("\tIngrese la medida del muslo izquierdo: \n");
+        double musloIzq = in.nextDouble();
+        System.out.println("\tIngrese la medida de la pantorrilla derecha: \n");
+        double pantorrillaDer = in.nextDouble();
+        System.out.println("\tIngrese la medida de la pantorrilla izquierda: \n");
+        double pantorrillaIzq = in.nextDouble();
+        Mediciones newMedicion = new Mediciones(estatura,peso,frecCard,presArtSistolica,presArtDiastolica, 
+            cuello, bicepsDer, bicepsIzq,pectoralH,espalda,cintura1,cintura2,
+            cintura3,cadera,musloDer,musloIzq,pantorrillaDer,pantorrillaIzq, 
+            triceps,subescapular,abdomen,iliaco,muslo,pantorrilla,
+            pectoralPliegue,sexo);
+        listaMediciones.add(newMedicion);
         cantMediciones += 1;
     }
     
@@ -178,17 +170,24 @@ public class Paciente {
         cantProgramas+= 1;
     }
     
+    void verMediciones(){
+        for (int i = 0; i != cantMediciones; i++) {// Recorre la lista hasta que se llegue al numero maximo de pacientes registrados
+                        System.out.println(">>>>Paciente  "+ i+1);
+                        medicion1 = listaMediciones.get(i);//Guarda el paciente de la iteracion en un elemento de tipo paciente para acceder a sus metodos
+                        medicion1.toString();
+    
+            }
+    }
     public void verPaciente(){
         System.out.println("********************************************");
-        System.out.println("Nombre: "+ nombre);
-        System.out.println("Numero de identificacion: "+ numIdentificacion);
-        System.out.println("Numero de telefono: "+ telefono);
-        System.out.println("Correo electronico: "+ correoElectronico);
-        System.out.println("Fecha de nacimiento: "+ fechaNacimiento);
-        System.out.println("Programas: ");
-        System.out.println("Mediciones: ");
+        System.out.println("1.Nombre: "+ nombre);
+        System.out.println("2.Numero de identificacion: "+ numIdentificacion);
+        System.out.println("3.Numero de telefono: "+ telefono);
+        System.out.println("4.Correo electronico: "+ correoElectronico);
+        System.out.println("5.Fecha de nacimiento: "+ fechaNacimiento);
+        System.out.println("6.Programas: ");
+        System.out.println("7.Mediciones: ");
     }
-    
     
 }
 
