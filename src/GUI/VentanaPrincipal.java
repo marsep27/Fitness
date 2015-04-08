@@ -65,7 +65,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         listaPaciente = new javax.swing.JMenuItem();
         menuEjercicios = new javax.swing.JMenu();
         acercade = new javax.swing.JMenu();
-        salir = new javax.swing.JMenu();
+        salirPrograma = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Fitness");
@@ -144,12 +144,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         acercade.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 14)); // NOI18N
         barraMenu.add(acercade);
 
-        salir.setBackground(new java.awt.Color(0, 102, 102));
-        salir.setForeground(new java.awt.Color(255, 255, 255));
-        salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/salir.jpg"))); // NOI18N
-        salir.setText("Salir");
-        salir.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 14)); // NOI18N
-        barraMenu.add(salir);
+        salirPrograma.setBackground(new java.awt.Color(0, 102, 102));
+        salirPrograma.setForeground(new java.awt.Color(255, 255, 255));
+        salirPrograma.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/salir.jpg"))); // NOI18N
+        salirPrograma.setText("Salir");
+        salirPrograma.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 14)); // NOI18N
+        salirPrograma.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                salirProgramaMouseClicked(evt);
+            }
+        });
+        barraMenu.add(salirPrograma);
 
         setJMenuBar(barraMenu);
 
@@ -176,6 +181,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         VentanaCrearPaciente.getInstance().setVisible(true);
                 
     }//GEN-LAST:event_crearPacienteActionPerformed
+
+    private void salirProgramaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirProgramaMouseClicked
+      System.exit(0);
+    }//GEN-LAST:event_salirProgramaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -222,6 +231,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem listaPaciente;
     private javax.swing.JMenu menuEjercicios;
     private javax.swing.JMenu menuPaciente;
-    private javax.swing.JMenu salir;
+    private javax.swing.JMenu salirPrograma;
     // End of variables declaration//GEN-END:variables
 }

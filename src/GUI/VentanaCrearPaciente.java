@@ -42,20 +42,20 @@ public class VentanaCrearPaciente extends javax.swing.JInternalFrame {
         lblSexo = new javax.swing.JLabel();
         boxSexo = new javax.swing.JComboBox();
         fieldApellido1 = new javax.swing.JTextField();
-        fieldApelllido2 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        lbl = new com.toedter.calendar.JDateChooser();
+        fieldApellido2 = new javax.swing.JTextField();
+        lblCedula = new javax.swing.JLabel();
+        fieldCedula = new javax.swing.JTextField();
+        lblFecha = new javax.swing.JLabel();
+        lblTelefono = new javax.swing.JLabel();
+        lblCorreo = new javax.swing.JLabel();
+        fieldTelefono = new javax.swing.JTextField();
+        fieldCorreo = new javax.swing.JTextField();
+        dateFecha = new com.toedter.calendar.JDateChooser();
         btnCrear = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        btnLimpiar = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+        lblIcono1 = new javax.swing.JLabel();
+        lblIcono2 = new javax.swing.JLabel();
 
         setTitle("Crear Paciente");
 
@@ -75,20 +75,26 @@ public class VentanaCrearPaciente extends javax.swing.JInternalFrame {
 
         lblSexo.setText("Sexo");
 
-        boxSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Masculino", "Femenino" }));
+        boxSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "Masculino", "Femenino" }));
         boxSexo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 boxSexoActionPerformed(evt);
             }
         });
 
-        jLabel4.setText("Número de identificación");
+        fieldApellido2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fieldApellido2ActionPerformed(evt);
+            }
+        });
 
-        jLabel5.setText("Fecha de nacimiento");
+        lblCedula.setText("Número de identificación");
 
-        jLabel6.setText("Teléfono");
+        lblFecha.setText("Fecha de nacimiento");
 
-        jLabel7.setText("Correo Electrónico");
+        lblTelefono.setText("Teléfono");
+
+        lblCorreo.setText("Correo Electrónico");
 
         btnCrear.setText("Crear");
         btnCrear.addActionListener(new java.awt.event.ActionListener() {
@@ -97,20 +103,25 @@ public class VentanaCrearPaciente extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton2.setText("Limpiar");
-
-        jButton3.setText("Salir");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnLimpiarActionPerformed(evt);
             }
         });
 
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/pacientes+.png"))); // NOI18N
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
 
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/mas.jpg"))); // NOI18N
+        lblIcono1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIcono1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/pacientes+.png"))); // NOI18N
+
+        lblIcono2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIcono2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/mas.jpg"))); // NOI18N
 
         javax.swing.GroupLayout panelCrearPacienteLayout = new javax.swing.GroupLayout(panelCrearPaciente);
         panelCrearPaciente.setLayout(panelCrearPacienteLayout);
@@ -126,48 +137,48 @@ public class VentanaCrearPaciente extends javax.swing.JInternalFrame {
                                     .addGroup(panelCrearPacienteLayout.createSequentialGroup()
                                         .addGap(29, 29, 29)
                                         .addComponent(btnCrear))
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel5))
+                                    .addComponent(lblCorreo)
+                                    .addComponent(lblTelefono)
+                                    .addComponent(lblFecha))
                                 .addGroup(panelCrearPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(panelCrearPacienteLayout.createSequentialGroup()
                                         .addGap(23, 23, 23)
                                         .addGroup(panelCrearPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(fieldCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(dateFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(fieldTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(panelCrearPacienteLayout.createSequentialGroup()
                                         .addGap(66, 66, 66)
-                                        .addComponent(jButton2))))
+                                        .addComponent(btnLimpiar))))
                             .addGroup(panelCrearPacienteLayout.createSequentialGroup()
                                 .addGroup(panelCrearPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblApellido1)
                                     .addComponent(lblApellido2)
                                     .addComponent(lblSexo)
-                                    .addComponent(jLabel4))
+                                    .addComponent(lblCedula))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(panelCrearPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(boxSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(fieldApelllido2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(fieldCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(fieldApellido2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(fieldApellido1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(fieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addContainerGap(115, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCrearPacienteLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton3)
+                        .addComponent(btnSalir)
                         .addGap(26, 26, 26))))
-            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblIcono1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lblIcono2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panelCrearPacienteLayout.setVerticalGroup(
             panelCrearPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCrearPacienteLayout.createSequentialGroup()
-                .addComponent(jLabel8)
+                .addComponent(lblIcono1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9)
-                .addGap(31, 31, 31)
+                .addComponent(lblIcono2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelCrearPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -178,31 +189,31 @@ public class VentanaCrearPaciente extends javax.swing.JInternalFrame {
                 .addGap(14, 14, 14)
                 .addGroup(panelCrearPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblApellido2)
-                    .addComponent(fieldApelllido2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fieldApellido2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelCrearPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(boxSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblSexo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelCrearPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(fieldCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCedula))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelCrearPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel5)
-                    .addComponent(lbl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblFecha)
+                    .addComponent(dateFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelCrearPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblTelefono)
+                    .addComponent(fieldTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelCrearPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel7)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblCorreo)
+                    .addComponent(fieldCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(panelCrearPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton2)
+                    .addComponent(btnSalir)
+                    .addComponent(btnLimpiar)
                     .addComponent(btnCrear))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -229,37 +240,61 @@ public class VentanaCrearPaciente extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_fieldNombreActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+
+    fieldNombre.setText("");
+    fieldApellido1.setText("");
+    fieldApellido2.setText("");
+    boxSexo.setSelectedIndex(0);
+    fieldCedula.setText("");
+    dateFecha.setDate(null);
+    fieldTelefono.setText("");
+    fieldCorreo.setText("");  
+    this.setVisible(false);
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCrearActionPerformed
 
+    private void fieldApellido2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldApellido2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fieldApellido2ActionPerformed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+    fieldNombre.setText("");
+    fieldApellido1.setText("");
+    fieldApellido2.setText("");
+    boxSexo.setSelectedIndex(0);
+    fieldCedula.setText("");
+    dateFecha.setDate(null);
+    fieldTelefono.setText("");
+    fieldCorreo.setText(""); 
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox boxSexo;
     private javax.swing.JButton btnCrear;
+    private javax.swing.JButton btnLimpiar;
+    private javax.swing.JButton btnSalir;
+    private com.toedter.calendar.JDateChooser dateFecha;
     private javax.swing.JTextField fieldApellido1;
-    private javax.swing.JTextField fieldApelllido2;
+    private javax.swing.JTextField fieldApellido2;
+    private javax.swing.JTextField fieldCedula;
+    private javax.swing.JTextField fieldCorreo;
     private javax.swing.JTextField fieldNombre;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private com.toedter.calendar.JDateChooser lbl;
+    private javax.swing.JTextField fieldTelefono;
     private javax.swing.JLabel lblApellido1;
     private javax.swing.JLabel lblApellido2;
+    private javax.swing.JLabel lblCedula;
+    private javax.swing.JLabel lblCorreo;
+    private javax.swing.JLabel lblFecha;
+    private javax.swing.JLabel lblIcono1;
+    private javax.swing.JLabel lblIcono2;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblSexo;
+    private javax.swing.JLabel lblTelefono;
     private javax.swing.JPanel panelCrearPaciente;
     // End of variables declaration//GEN-END:variables
 }
