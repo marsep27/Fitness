@@ -104,12 +104,12 @@ public class Paciente {
         System.out.println("Ingrese su peso: \n *La medida debe estar en kilogramos*\n");
         double peso = in.nextDouble();
         System.out.println("Ingrese su frecuencia cardiaca: \n *La medida debe estar en latidos por minuto*\n");
-        int freqCard = in.nextInt();
+        int frecCard = in.nextInt();
         System.out.println("\tIngrese la medida del presion arterial.\n Son dos las cuales deben estar en milimetros de mercurio \n\t1.Sistolica: ");
         int presArtSistolica = in.nextInt();
         System.out.println("\n\t2.Diastolica: ");
         int presArtDiastolica = in.nextInt();
-        Mediciones newMedicion = new Mediciones(estatura,peso,freqCard,presArtSistolica,presArtDiastolica);
+        
         //PLIEGUES CUTANEOS 
         System.out.println("****************************************************");
         System.out.println(">>>> MEDICIONES DE LOS PLIEGUES CUTANEOS");
@@ -127,8 +127,7 @@ public class Paciente {
         System.out.println("\tIngrese la medida de la pantorrilla: \n");
         double pantorrilla = in.nextDouble();
         System.out.println("\tIngrese la medida del pectoral: \n");
-        double pectoral = in.nextDouble();
-        newMedicion.agregarMedicionesPliegCutaneos(triceps, subescapular, abdomen, iliaco, muslo, pantorrilla, pectoral);
+        double pectoralPliegue = in.nextDouble();
         System.out.println("****************************************************");
         System.out.println(">>>>MEDICIONES DE LAS CIRCUNFENCIAS CORPORALES");
         System.out.println("Las siguientes medidas deben estar en centimetros");
@@ -138,7 +137,7 @@ public class Paciente {
         double bicepsDer = in.nextDouble();
         System.out.println("\tIngrese la medida del biceps izquierdo: \n");
         double bicepsIzq = in.nextDouble();
-        System.out.println("\tIngrese la medida del pectoral solo para hombre: \n");
+        System.out.println("\tIngrese la medida del pectoral solo para hombre: \n*si es mujer escriba 0*");
         double pectoralH = in.nextDouble();
         System.out.println("\tIngrese la medida de la espalda: \n");
         double espalda = in.nextDouble();
@@ -158,9 +157,12 @@ public class Paciente {
         double pantorrillaDer = in.nextDouble();
         System.out.println("\tIngrese la medida de la pantorrilla izquierda: \n");
         double pantorrillaIzq = in.nextDouble();
-        newMedicion.agregarMediciCircunCorporales(cuello,bicepsDer,bicepsIzq,pectoral,espalda,
-                    cintura1,cintura2,cintura3,cadera, musloDer,musloIzq,pantorrillaDer,pantorrillaIzq,sexo);
-        
+        Mediciones newMedicion = new Mediciones(estatura,peso,frecCard,presArtSistolica,presArtDiastolica, 
+            cuello, bicepsDer, bicepsIzq,pectoralH,espalda,cintura1,cintura2,
+            cintura3,cadera,musloDer,musloIzq,pantorrillaDer,pantorrillaIzq, 
+            triceps,subescapular,abdomen,iliaco,muslo,pantorrilla,
+            pectoralPliegue,sexo);
+        listaMediciones.add(newMedicion);
         cantMediciones += 1;
     }
     
@@ -168,6 +170,14 @@ public class Paciente {
         cantProgramas+= 1;
     }
     
+    void verMediciones(){
+        for (int i = 0; i != cantMediciones; i++) {// Recorre la lista hasta que se llegue al numero maximo de pacientes registrados
+                        System.out.println(">>>>Paciente  "+ i+1);
+                        medicion1 = listaMediciones.get(i);//Guarda el paciente de la iteracion en un elemento de tipo paciente para acceder a sus metodos
+                        medicion1.toString();
+    
+            }
+    }
     public void verPaciente(){
         System.out.println("********************************************");
         System.out.println("1.Nombre: "+ nombre);
