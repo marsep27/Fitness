@@ -155,7 +155,7 @@ public class Mediciones {
     
     public double calcularGrasaCorpo(double cintura,double cuello,double altura,double cadera, String sexo){
             double result;
-            if (sexo == "Hombre"){
+            if (sexo == "Masculino"){
                 result = 495/(1.0324-0.19077*(Math.log(cintura-cuello))+0.15456*(Math.log(altura)))-450;
             }
             else{

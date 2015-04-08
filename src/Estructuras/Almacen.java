@@ -2,7 +2,7 @@ package Estructuras;
 
 import java.util.ArrayList;
 
-public class Bodega {
+public class Almacen {
     public static ArrayList <Estructuras.Maquina> machine = new ArrayList<>();
     
     public static void agregaEjercicio(Maquina mach){
