@@ -39,6 +39,10 @@ public class Paciente {
         
     }
 
+    public Paciente(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getCorreoElectrónico() {
         return correoElectronico;
     }
