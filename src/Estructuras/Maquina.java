@@ -40,9 +40,7 @@ public class Maquina {
     private String AreaTrabajada;
     private String Tipo;
     private String Descripcion;
-    public ArrayList<String> listMaquinas = new ArrayList<>(//Maquinas del gimnacio
-      Arrays.asList("Pelota de balance","Mini trampolín","Escaladora","Remadora","Prensa de piernas","Mesa de pilates"
-                    ,"Bicicleta de spinning","Bicicleta recostada","Elíptica","Caminadora","Sin maquina","Mancuernas","Ligas"));
+    
     
     public Maquina(String pNombre, String pArea, String pTipo, String pDescripcion){
         Nombre = pNombre;

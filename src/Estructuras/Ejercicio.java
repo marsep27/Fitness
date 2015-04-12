@@ -103,6 +103,11 @@ public class Ejercicio {
     public void setTiempoDescanso(String tiempoDescanso) {
         this.tiempoDescanso = tiempoDescanso;
     }
+
+    @Override
+    public String toString() {
+        return "Ejercicio{" + "Nombre=" + Nombre + ", Series=" + Series + ", Repeticiones=" + Repeticiones + ", duracion=" + duracion + ", maquina=" + maquina + ", peso1=" + peso1 + ", peso2=" + peso2 + ", peso3=" + peso3 + ", tiempoDescanso=" + tiempoDescanso + '}';
+    }
     
     
 }

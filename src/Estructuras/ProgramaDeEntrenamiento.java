@@ -48,8 +48,8 @@ public class ProgramaDeEntrenamiento {
         return DiaFinal;
     }
 
-    public void setDiaFinal(int AnioFin, int MesFin, int DiaFin) {
-        this.DiaFinal = LocalDateTime.of(AnioFin, MesFin-1, DiaFin, 0, 0);
+    public void setDiaFinal(int AñoFin, int MesFin, int DiaFin) {
+        this.DiaFinal = LocalDateTime.of(AñoFin, MesFin-1, DiaFin, 0, 0);
     }
 
     public int getAsistencia() {
@@ -60,12 +60,21 @@ public class ProgramaDeEntrenamiento {
         return DiaInicio;
     }
 
-    public void setDiaInicio(int AnioIni, int MesIni, int DiaIni){
-        this.DiaInicio = LocalDateTime.of(AnioIni, MesIni, DiaIni, 0, 0);
+    public void setDiaInicio(int AñoIni, int MesIni, int DiaIni){
+        this.DiaInicio = LocalDateTime.of(AñoIni, MesIni, DiaIni, 0, 0);
     } 
     
     public void agregarDia(String nombreDia){
         Dia newDia = new Dia(nombreDia);
         dias.add(newDia);
+    }
+    
+    public void eliminaDia(Dia dia){
+        dias.remove(dia);
+    }
+    
+    public void verPrograma(){
+        
+    
     }
 }

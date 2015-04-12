@@ -1,15 +1,19 @@
 package Administrador;
 
+import Estructuras.Maquina;
 import Estructuras.Paciente;
+import Estructuras.Almacen;
+import Estructuras.Ejercicio;
+import Estructuras.Dia;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;//Lista
-import java.nio.file.Path;//lista
-import java.nio.file.Paths;//Para iterar
-import java.util.ArrayList;//Leer entradas del usuario
+import java.nio.charset.StandardCharsets;//Lista
+import java.nio.file.Files;//lista
+import java.nio.file.Path;//Para iterar
+import java.nio.file.Paths;//Leer entradas del usuario
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
@@ -30,6 +34,7 @@ public class Administrador {
       public ArrayList<String> listCedulas = new ArrayList();//Guarda todas las cedulas de los pacientes
       Scanner in = new Scanner(System.in);// El scanner in lee las entradas
       public ArrayList<String> listNombres = new ArrayList();
+      Maquina maquina;
    
     
             public void agregarPaciente(String pNombre, String pSexo, String pNumIdentificacion, String pTelefono, String pCorreoElectronico, String pFechaNacimiento){
@@ -154,8 +159,9 @@ public class Administrador {
                
                 }
             
-            public void agregarMaquina(String NombreMaquina){
-            
+            public void agregarMaquina(String NombreMaquina, String areaTrabajada, String tipo, String descripcion){
+                    maquina = new Maquina(NombreMaquina, areaTrabajada, tipo, descripcion);
+                    listMaquinas.add(maquina.getNombre());
             }
             
             public void verPaciente(){
