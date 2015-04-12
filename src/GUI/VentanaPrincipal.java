@@ -39,7 +39,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             e.printStackTrace();
         }
         escritorio.add(VentanaCrearPaciente.getInstance());
-        
+        escritorio.add(VentanaConsultarPaciente.getInstance());
+        escritorio.add(VentanaAcerca.getInstance());
+        escritorio.add(VentanaListaPacientes.getInstance());
+        escritorio.add(VentanaMediciones.getInstance());
         setVisible(true);
     }
 
@@ -57,14 +60,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         escritorio = new javax.swing.JDesktopPane();
-        lblIcono = new javax.swing.JLabel();
         barraMenu = new javax.swing.JMenuBar();
         menuPaciente = new javax.swing.JMenu();
         crearPaciente = new javax.swing.JMenuItem();
         consultarPaciente = new javax.swing.JMenuItem();
         listaPaciente = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         menuEjercicios = new javax.swing.JMenu();
-        acercade = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        acerca = new javax.swing.JMenu();
         salirPrograma = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -74,22 +80,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         escritorio.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         escritorio.setForeground(new java.awt.Color(0, 102, 102));
 
-        lblIcono.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/icono.png"))); // NOI18N
-
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblIcono, javax.swing.GroupLayout.DEFAULT_SIZE, 1346, Short.MAX_VALUE)
+            .addGap(0, 1346, Short.MAX_VALUE)
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(escritorioLayout.createSequentialGroup()
-                .addComponent(lblIcono, javax.swing.GroupLayout.PREFERRED_SIZE, 670, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGap(0, 670, Short.MAX_VALUE)
         );
-        escritorio.setLayer(lblIcono, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         barraMenu.setBackground(new java.awt.Color(0, 102, 102));
         barraMenu.setBorder(null);
@@ -126,7 +126,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         listaPaciente.setBackground(new java.awt.Color(204, 102, 0));
         listaPaciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/lista.jpg"))); // NOI18N
         listaPaciente.setText("Lista Pacientes");
+        listaPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listaPacienteActionPerformed(evt);
+            }
+        });
         menuPaciente.add(listaPaciente);
+
+        jMenuItem1.setBackground(new java.awt.Color(204, 102, 0));
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/medida.png"))); // NOI18N
+        jMenuItem1.setText("Medidas Pacientes");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        menuPaciente.add(jMenuItem1);
+
+        jMenuItem2.setBackground(new java.awt.Color(204, 102, 0));
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/rutina.png"))); // NOI18N
+        jMenuItem2.setText("Rutinas Pacientes");
+        menuPaciente.add(jMenuItem2);
 
         barraMenu.add(menuPaciente);
 
@@ -135,14 +155,35 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         menuEjercicios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/ejercicios.jpg"))); // NOI18N
         menuEjercicios.setText("Ejercicios");
         menuEjercicios.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 14)); // NOI18N
+
+        jMenuItem3.setBackground(new java.awt.Color(204, 102, 0));
+        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/ejercicio.jpg"))); // NOI18N
+        jMenuItem3.setText("Ejercicios");
+        menuEjercicios.add(jMenuItem3);
+
+        jMenuItem4.setBackground(new java.awt.Color(204, 102, 0));
+        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/maquina.jpg"))); // NOI18N
+        jMenuItem4.setText("Maquinas");
+        menuEjercicios.add(jMenuItem4);
+
         barraMenu.add(menuEjercicios);
 
-        acercade.setBackground(new java.awt.Color(0, 102, 102));
-        acercade.setForeground(new java.awt.Color(255, 255, 255));
-        acercade.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/acerca de.jpg"))); // NOI18N
-        acercade.setText("Acerca de");
-        acercade.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 14)); // NOI18N
-        barraMenu.add(acercade);
+        acerca.setBackground(new java.awt.Color(0, 102, 102));
+        acerca.setForeground(new java.awt.Color(255, 255, 255));
+        acerca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/acerca de.jpg"))); // NOI18N
+        acerca.setText("Acerca");
+        acerca.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 14)); // NOI18N
+        acerca.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                acercaMouseClicked(evt);
+            }
+        });
+        acerca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                acercaActionPerformed(evt);
+            }
+        });
+        barraMenu.add(acerca);
 
         salirPrograma.setBackground(new java.awt.Color(0, 102, 102));
         salirPrograma.setForeground(new java.awt.Color(255, 255, 255));
@@ -173,18 +214,32 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void consultarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarPacienteActionPerformed
-        // TODO add your handling code here:
+       VentanaConsultarPaciente.getInstance().setVisible(true);  
     }//GEN-LAST:event_consultarPacienteActionPerformed
 
     private void crearPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearPacienteActionPerformed
-        // TODO add your handling code here:
-        VentanaCrearPaciente.getInstance().setVisible(true);
-                
+       VentanaCrearPaciente.getInstance().setVisible(true);                
     }//GEN-LAST:event_crearPacienteActionPerformed
 
     private void salirProgramaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salirProgramaMouseClicked
       System.exit(0);
     }//GEN-LAST:event_salirProgramaMouseClicked
+
+    private void acercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acercaActionPerformed
+        VentanaAcerca.getInstance().setVisible(true);
+    }//GEN-LAST:event_acercaActionPerformed
+
+    private void acercaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_acercaMouseClicked
+        VentanaAcerca.getInstance().setVisible(true);
+    }//GEN-LAST:event_acercaMouseClicked
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        VentanaMediciones.getInstance().setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void listaPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaPacienteActionPerformed
+        VentanaListaPacientes.getInstance().setVisible(true);
+    }//GEN-LAST:event_listaPacienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,12 +277,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu acercade;
+    private javax.swing.JMenu acerca;
     private javax.swing.JMenuBar barraMenu;
     private javax.swing.JMenuItem consultarPaciente;
     private javax.swing.JMenuItem crearPaciente;
-    private javax.swing.JDesktopPane escritorio;
-    private javax.swing.JLabel lblIcono;
+    public static javax.swing.JDesktopPane escritorio;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem listaPaciente;
     private javax.swing.JMenu menuEjercicios;
     private javax.swing.JMenu menuPaciente;

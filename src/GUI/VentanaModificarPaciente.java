@@ -11,24 +11,24 @@ import javax.swing.DefaultComboBoxModel;
  *
  * @author Marco
  */
-public class VentanaCrearPaciente extends javax.swing.JInternalFrame {
+public class VentanaModificarPaciente extends javax.swing.JInternalFrame {
 
-    private static VentanaCrearPaciente miVentanaCrearPaciente;
+    private static VentanaModificarPaciente miVentanaModificarPaciente;
     
     /**
      * Creates new form ventanaCrearPaciente
      */
-    VentanaCrearPaciente() {
+    VentanaModificarPaciente() {
         initComponents();
         setResizable(false);
     }
-    public static VentanaCrearPaciente getInstance()
+    public static VentanaModificarPaciente getInstance()
     {
-        if(miVentanaCrearPaciente == null)
+        if(miVentanaModificarPaciente == null)
         {
-            miVentanaCrearPaciente = new VentanaCrearPaciente();
+            miVentanaModificarPaciente = new VentanaModificarPaciente();
         }
-        return miVentanaCrearPaciente;
+        return miVentanaModificarPaciente;
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -55,10 +55,9 @@ public class VentanaCrearPaciente extends javax.swing.JInternalFrame {
         btnLimpiar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         lblIcono1 = new javax.swing.JLabel();
-        lblIcono2 = new javax.swing.JLabel();
 
         setIconifiable(true);
-        setTitle("Crear Paciente");
+        setTitle("Modificar Paciente");
 
         panelCrearPaciente.setBackground(new java.awt.Color(0, 153, 102));
 
@@ -97,7 +96,7 @@ public class VentanaCrearPaciente extends javax.swing.JInternalFrame {
 
         lblCorreo.setText("Correo Electrónico");
 
-        btnCrear.setText("Crear");
+        btnCrear.setText("Modificar");
         btnCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCrearActionPerformed(evt);
@@ -120,9 +119,6 @@ public class VentanaCrearPaciente extends javax.swing.JInternalFrame {
 
         lblIcono1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIcono1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/pacientes.png"))); // NOI18N
-
-        lblIcono2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblIcono2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/mas.jpg"))); // NOI18N
 
         javax.swing.GroupLayout panelCrearPacienteLayout = new javax.swing.GroupLayout(panelCrearPaciente);
         panelCrearPaciente.setLayout(panelCrearPacienteLayout);
@@ -164,15 +160,13 @@ public class VentanaCrearPaciente extends javax.swing.JInternalFrame {
                             .addComponent(fieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(24, Short.MAX_VALUE))
             .addComponent(lblIcono1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lblIcono2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panelCrearPacienteLayout.setVerticalGroup(
             panelCrearPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCrearPacienteLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
                 .addComponent(lblIcono1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblIcono2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(panelCrearPacienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -209,7 +203,7 @@ public class VentanaCrearPaciente extends javax.swing.JInternalFrame {
                     .addComponent(btnSalir)
                     .addComponent(btnLimpiar)
                     .addComponent(btnCrear))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -285,7 +279,6 @@ public class VentanaCrearPaciente extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblCorreo;
     private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblIcono1;
-    private javax.swing.JLabel lblIcono2;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblSexo;
     private javax.swing.JLabel lblTelefono;
