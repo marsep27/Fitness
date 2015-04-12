@@ -29,12 +29,12 @@ public class Paciente {
     Scanner in = new Scanner(System.in);
     
     
-    public Paciente(String pNombre, String pSexo, String pNumIdentificacion, String pTelefono, String pCorreoElectrónico, String pFechaNacimiento) {
+    public Paciente(String pNombre, String pSexo, String pNumIdentificacion, String pTelefono, String pCorreoElectronico, String pFechaNacimiento) {
         this.nombre = pNombre;
         this.sexo = pSexo;
         this.numIdentificacion = pNumIdentificacion;
         this.telefono = pTelefono;
-        this.correoElectronico = pCorreoElectrónico;
+        this.correoElectronico = pCorreoElectronico;
         this.fechaNacimiento = pFechaNacimiento; 
         
     }
@@ -43,7 +43,7 @@ public class Paciente {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public String getCorreoElectrónico() {
+    public String getCorreoElectronico() {
         return correoElectronico;
     }
 
@@ -77,8 +77,8 @@ public class Paciente {
         return numIdentificacion;
     }
 
-    public void setCorreoElectrónico(String correoElectrónico) {
-        this.correoElectronico = correoElectrónico;
+    public void setCorreoElectrónico(String correoElectronico) {
+        this.correoElectronico = correoElectronico;
     }
 
     public void setNumIdentificacion(String numIdentificacion) {

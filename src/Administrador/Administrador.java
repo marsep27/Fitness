@@ -11,6 +11,7 @@ import java.nio.file.Path;//lista
 import java.nio.file.Paths;//Para iterar
 import java.util.ArrayList;//Leer entradas del usuario
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -28,31 +29,14 @@ public class Administrador {
       Arrays.asList("@","."));
       public ArrayList<String> listCedulas = new ArrayList();//Guarda todas las cedulas de los pacientes
       Scanner in = new Scanner(System.in);// El scanner in lee las entradas
+      public ArrayList<String> listNombres = new ArrayList();
    
     
-            public void agregarPaciente(){
-                    /*Clase crea un paciente y verifica que todas sus entradas sean correctas*/
-                    System.out.println("****************Creando paciente*********************");
-                    System.out.println("Por favor proporcione la siguiente informacion:");
-                    System.out.println("Nombre del paciente: ");
-                    String nombre = in.nextLine();//Lee el nombre
-                    System.out.println("Sexo: ");
-                    String sexo = in.nextLine();//Lee el sexo
-                    System.out.println("Numero de identificacion: ");
-                    String numIdentificacion = in.nextLine();//Lee el numero de identificacion o cedula
-                    boolean ced = vericarCedula(numIdentificacion);//Verifica que el num ced este bien escrito
-                    boolean  p = verificarPaciente(numIdentificacion);//Verifica que el paciente no exista
-                    System.out.println("Numero de telefono: ");
-                    String numTel = in.nextLine();//Lee el numero de telefono
-                    boolean tel = vericarTel(numTel);//Verifica que el telefono este bien escrito
-                    System.out.println("Correo electronico: ");
-                    String correo = in.nextLine();//Lee el correo del cliente
-                    boolean co = vericarCorreo(correo);//Verifica que el correo este bien escrito
-                    System.out.println("Fecha de nacimiento");
-                    String fechaNaci = in.nextLine();// Lee la fecha de nacimiento
-                    Paciente newPaciente = new Paciente(nombre,sexo,numIdentificacion,numTel,correo,fechaNaci);// crea el paciente
+            public void agregarPaciente(String pNombre, String pSexo, String pNumIdentificacion, String pTelefono, String pCorreoElectronico, String pFechaNacimiento){
+                    Paciente newPaciente = new Paciente(pNombre,pSexo,pNumIdentificacion,pTelefono,pCorreoElectronico,pFechaNacimiento);// crea el paciente
                     listaPacientes.add(newPaciente);//Agrega el paciente a la lista de pacientes
-                    listCedulas.add(numIdentificacion);//Agrega el numero de cedula del paciente a la lista de numeros de cedula
+                    listCedulas.add(pNumIdentificacion);//Agrega el numero de cedula del paciente a la lista de numeros de cedula
+                    listNombres.add(pNombre);
                     cantPacientes +=1;// incrementa en numero de pacientes
 
               }
@@ -71,10 +55,11 @@ public class Administrador {
             public void listaPacientes(){
                 /*Imprime lista de pacientes solo los nombres*/
                 for (int i = 0; i != cantPacientes; i++) {// recorre la lista de pacientes
+                        Collections.sort(listNombres);
                         System.out.println(">>>>Paciente  "+ i+1);
-                        paciente1 = listaPacientes.get(i);// Guarda el paciente de la iteracion
-                        paciente1.getNombre();//Imprime el nombre del paciente
-                        //FALTA acomodar en orden alfabetico
+                        String nom = listNombres.get(i);// Guarda el paciente de la iteracion
+                        System.out.println((i+1)+"."+nom);//Imprime el nombre del paciente
+                        
                     }
 
             }
@@ -166,10 +151,12 @@ public class Administrador {
                                 + " programas de entrenamiento.\n ¿Está seguro que desea eliminarlo?”\n1.Confirmar\n2.Cancelar");
                         int op = in.nextInt();//lee la respuesta de la confirmacion
                         if(op == 1){listaPacientes.remove(client-1);}else{/*regresa al listado de pacientes*/}//Si el usuario confirma lo borra sino no
-                              
-            
+               
                 }
             
+            public void agregarMaquina(){
+            
+            }
             
             public void verPaciente(){
                 /*Muestra la info de una paciente en especifico*/
@@ -265,7 +252,7 @@ public class Administrador {
                 
                 try(BufferedWriter w = Files.newBufferedWriter(path, utf8)){
                     for(Paciente paci : listaPacientes){
-                        w.write(paci.getNombre()+ ";" + paci.getNumIdentificacion()+ ";" + paci.getCorreoElectrónico()+ ";" + paci.getFechaNacimiento() + ";" + paci.getSexo()+ ";" + "\n");
+                        w.write(paci.getNombre()+ ";" + paci.getNumIdentificacion()+ ";" + paci.getCorreoElectronico()+ ";" + paci.getFechaNacimiento() + ";" + paci.getSexo()+ ";" + "\n");
                     }
                 }catch(Exception e){
                 e.printStackTrace();
