@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Marco/Documents/GitHub/Fitness/src/GUI/VentanaConsultarPaciente.java</file>
+            <file>file:/C:/Users/Marco/Documents/GitHub/Fitness/src/GUI/VentanaModificarPaciente.java</file>
             <file>file:/C:/Users/Marco/Documents/GitHub/Fitness/src/GUI/VentanaPrincipal.java</file>
-            <file>file:/C:/Users/Marco/Documents/GitHub/Fitness/src/GUI/VentanaAcerca.java</file>
-            <file>file:/C:/Users/Marco/Documents/GitHub/Fitness/src/GUI/VentanaCrearPaciente.java</file>
+            <file>file:/C:/Users/Marco/Documents/GitHub/Fitness/src/GUI/VentanaAgregarMedidas.java</file>
+            <file>file:/C:/Users/Marco/Documents/GitHub/Fitness/src/GUI/VentanaListaPacientes.java</file>
+            <file>file:/C:/Users/Marco/Documents/GitHub/Fitness/src/GUI/VentanaMediciones.java</file>
         </group>
     </open-files>
 </project-private>
