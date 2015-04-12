@@ -1,10 +1,18 @@
 package Administrador;
 
 import Estructuras.Paciente;
-import java.util.ArrayList;//Lista
-import java.util.Arrays;//lista
-import java.util.Iterator;//Para iterar
-import java.util.Scanner;//Leer entradas del usuario
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;//Lista
+import java.nio.file.Path;//lista
+import java.nio.file.Paths;//Para iterar
+import java.util.ArrayList;//Leer entradas del usuario
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.Scanner;
 
 public class Administrador {
     
@@ -194,6 +202,9 @@ public class Administrador {
                         Iterator<String> i = cedula.iterator();//Iterador para recorrer la lista de numeros y signos
                         while(i.hasNext()){//Avanza un elemento en cada iteracion en la lista
                             String elem = i.next();//Guardamos el elemento que extre el iterador
+                            if (elem == "-"){
+                                cond = true;
+                            }
                             if(var.equals(elem)){//Comparamos cada elemento de la lista con cada elemento del numero entrante
                                 cond = true;
                             }
@@ -247,5 +258,39 @@ public class Administrador {
                     return true;
                     }else{return false;}
             }
-    
+        public void guardarPaciente(ArrayList<Paciente> listaPacientes) throws IOException{
+                Path path = Paths.get("C:/clientes.txt");
+                Charset utf8 = StandardCharsets.UTF_8;
+                
+                
+                try(BufferedWriter w = Files.newBufferedWriter(path, utf8)){
+                    for(Paciente paci : listaPacientes){
+                        w.write(paci.getNombre()+ ";" + paci.getNumIdentificacion()+ ";" + paci.getCorreoElectrónico()+ ";" + paci.getFechaNacimiento() + ";" + paci.getSexo()+ ";" + "\n");
+                    }
+                }catch(Exception e){
+                e.printStackTrace();
+                }
+                
+        }
+        
+        
+        public ArrayList<Paciente> lectura() throws IOException{
+                Path path = Paths.get("C:/clientes.txt");
+                Charset utf8 = StandardCharsets.UTF_8;
+                String tmp;
+                ArrayList<Paciente> pacientes = new ArrayList<>();
+                
+                try(BufferedReader r = Files.newBufferedReader(path, utf8)){
+                    while((tmp = r.readLine()) != null){
+                    String[] tmpSplit = tmp.split(";");
+                    Paciente paciente = new Paciente(tmpSplit[0]);
+                    listaPacientes.add(paciente);
+                    }
+                }
+                catch(Exception e){
+                e.printStackTrace();
+                }
+               return listaPacientes;
+                
+        }
 }

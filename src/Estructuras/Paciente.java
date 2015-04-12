@@ -6,6 +6,7 @@
 
 package Estructuras;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -36,6 +37,10 @@ public class Paciente {
         this.correoElectronico = pCorreoElectrónico;
         this.fechaNacimiento = pFechaNacimiento; 
         
+    }
+
+    public Paciente(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getCorreoElectrónico() {
