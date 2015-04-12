@@ -154,7 +154,7 @@ public class Administrador {
                
                 }
             
-            public void agregarMaquina(){
+            public void agregarMaquina(String NombreMaquina){
             
             }
             
