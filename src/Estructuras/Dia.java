@@ -100,4 +100,8 @@ public class Dia {
                    ejer.verEjercicio();
         }
     }
+    
+    public void eliminarDia(){
+        rutina.clear();
+    }
 }

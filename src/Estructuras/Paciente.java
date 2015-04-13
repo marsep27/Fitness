@@ -24,9 +24,11 @@ public class Paciente {
     public int cantProgramas = 0;
     public int cantMediciones = 0;
     private static Mediciones medicion1;
+    private static ProgramaDeEntrenamiento program;
     public ArrayList<Mediciones> listaMediciones = new ArrayList();//Lista de mediciones
     //public ArrayList<ProgramasEntrenamiento> listaProgramEntrena = new ArrayList();//Lista de programas de entrenamiento
     Scanner in = new Scanner(System.in);
+    public ArrayList<ProgramaDeEntrenamiento> listaProgramas = new ArrayList();
     
     
     public Paciente(String pNombre, String pSexo, String pNumIdentificacion, String pTelefono, String pCorreoElectronico, String pFechaNacimiento) {
@@ -175,8 +177,11 @@ public class Paciente {
         cantMediciones += 1;
     }
     
-    public void obPrograma(){
+    public void obPrograma(String Titulo, String Descripcion, int AñoFin, int MesFin, int DiaFin, String setDia){
+        program  = new ProgramaDeEntrenamiento(Titulo,Descripcion,AñoFin,MesFin,DiaFin,setDia);
         cantProgramas+= 1;
+        listaProgramas.add(program);
+        
     }
     
     void verMediciones(){
@@ -195,11 +200,26 @@ public class Paciente {
         System.out.println("4.Correo electronico: "+ correoElectronico);
         System.out.println("5.Fecha de nacimiento: "+ fechaNacimiento);
         System.out.println("6.Programas: ");
+        int i = 0;
+        for(ProgramaDeEntrenamiento program: listaProgramas){
+            System.out.println("Programa "+i);
+            program.verProgramas();
+            i++;
+        }
         System.out.println("7.Mediciones");
         for(Mediciones med: listaMediciones){
             System.out.println("Fecha de medicion: "+ med.getFechaCreacion()+"\n");
             med.verMedicioness();
         }
+    }
+    
+    public void eliminarPaciente(){
+        listaMediciones.clear();
+        for(ProgramaDeEntrenamiento program: listaProgramas){
+            program.eliminarPrograma();
+        }
+        listaProgramas.clear();
+    
     }
     
 }

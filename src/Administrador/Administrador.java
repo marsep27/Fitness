@@ -35,10 +35,12 @@ public class Administrador {
       Scanner in = new Scanner(System.in);// El scanner in lee las entradas
       public ArrayList<String> listNombres = new ArrayList();
       Maquina maquina;
+      Almacen almacen = new Almacen();
       public ArrayList<String> listMaquinas = new ArrayList<>(//Maquinas del gimnacio
       Arrays.asList("Pelota de balance","Mini trampolín","Escaladora","Remadora","Prensa de piernas","Mesa de pilates"
                     ,"Bicicleta de spinning","Bicicleta recostada","Elíptica","Caminadora","Sin maquina","Mancuernas",
                     "Ligas","Maquina con pesas y soportes","Maquina Smith","Banca para ejercicios"));
+      
    
     
             public void agregarPaciente(String pNombre, String pSexo, String pNumIdentificacion, String pTelefono, String pCorreoElectronico, String pFechaNacimiento){
@@ -151,17 +153,22 @@ public class Administrador {
             
             public void borrarPaciente(Paciente paciente1){
                 /*Borra un paciente junto con sus mediciones y programas*/
-                        System.out.println("“El paciente "+ paciente1.getNombre()+ " será eliminado del sistema. \n"//Mensaje de confirmacion
-                                + "Cuenta con" + paciente1.getCantMediciones()+" mediciones y " + paciente1.getCantProgramas()
-                                + " programas de entrenamiento.\n ¿Está seguro que desea eliminarlo?”\n1.Confirmar\n2.Cancelar");
-                        int op = in.nextInt();//lee la respuesta de la confirmacion
-                        if(op == 1){listaPacientes.remove(paciente1);}else{/*regresa al listado de pacientes*/}//Si el usuario confirma lo borra sino no
+//                        System.out.println("“El paciente "+ paciente1.getNombre()+ " será eliminado del sistema. \n"//Mensaje de confirmacion
+//                                + "Cuenta con" + paciente1.getCantMediciones()+" mediciones y " + paciente1.getCantProgramas()
+//                                + " programas de entrenamiento.\n ¿Está seguro que desea eliminarlo?”\n1.Confirmar\n2.Cancelar");
+//                        int op = in.nextInt();//lee la respuesta de la confirmacion
+//                        if(op == 1){
+                            paciente1.eliminarPaciente();
+                            listaPacientes.remove(paciente1);
+//                        }else{/*regresa al listado de pacientes*/}//Si el usuario confirma lo borra sino no
                
                 }
             
             public void agregarMaquina(String NombreMaquina, String areaTrabajada, String tipo, String descripcion){
                     maquina = new Maquina(NombreMaquina, areaTrabajada, tipo, descripcion);
                     listMaquinas.add(maquina.getNombre());
+                    almacen.agregaMaquina(maquina);
+                    
             }
             
             public void verPaciente(){
@@ -173,7 +180,11 @@ public class Administrador {
                         paciente1.verPaciente();//Muestra la info del paciente
                         //FALTA la lista de mediciones y programas acomodados
             }
-
+            
+            public void agregarPrograma(Paciente paciente,String Titulo, String Descripcion, int AñoFin, int MesFin, int DiaFin, String setDia){
+                paciente.obPrograma(Titulo, Descripcion, AñoFin, MesFin, DiaFin, setDia);
+            }
+            
             public boolean verificarPaciente(String numCedula){
                 /*Verifica si un paciente existe o no*/
                 boolean cond = false;

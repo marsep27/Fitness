@@ -4,12 +4,16 @@ import java.util.ArrayList;
 
 public class Almacen {
     public static ArrayList <Estructuras.Maquina> machine = new ArrayList<>();
+
+    public Almacen() {
+    }
     
-    public static void agregaMaquina(Maquina maquina){
+    
+    public void agregaMaquina(Maquina maquina){
         machine.add(maquina);
     }  
     
-    public static ArrayList DameMachine(){
+    public ArrayList getMaquina(){
         return machine;
     }  
   

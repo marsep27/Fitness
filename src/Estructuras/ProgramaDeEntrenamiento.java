@@ -80,5 +80,11 @@ public class ProgramaDeEntrenamiento {
         }
     }
     
+    public void eliminarPrograma(){
+        for(Dia dia: dias){
+            dia.eliminarDia();
+        }
+        dias.clear();
+    }
     
 }
