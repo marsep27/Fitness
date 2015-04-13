@@ -239,7 +239,7 @@ public class VentanaAgregarMedidas extends javax.swing.JInternalFrame {
 
         jLabel36.setText("cm");
 
-        jLabel37.setText("Cintura2:");
+        jLabel37.setText("Cintura3:");
 
         jTextField17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

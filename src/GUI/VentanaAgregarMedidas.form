@@ -675,7 +675,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel37">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Cintura2:"/>
+            <Property name="text" type="java.lang.String" value="Cintura3:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextField17">
