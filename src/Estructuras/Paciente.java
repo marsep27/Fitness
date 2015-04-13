@@ -101,71 +101,75 @@ public class Paciente {
         this.sexo = sexo;
     }
     
-    public void obMedicion(){
-        System.out.println("");
-        System.out.println(">>Lista de mediciones\n");
-        System.out.println("Ingrese su estatura: \n *La medida debe estar en metros*\n");
-        double estatura = in.nextDouble();
-        System.out.println("Ingrese su peso: \n *La medida debe estar en kilogramos*\n");
-        double peso = in.nextDouble();
-        System.out.println("Ingrese su frecuencia cardiaca: \n *La medida debe estar en latidos por minuto*\n");
-        int frecCard = in.nextInt();
-        System.out.println("\tIngrese la medida del presion arterial.\n Son dos las cuales deben estar en milimetros de mercurio \n\t1.Sistolica: ");
-        int presArtSistolica = in.nextInt();
-        System.out.println("\n\t2.Diastolica: ");
-        int presArtDiastolica = in.nextInt();
-        
-        //PLIEGUES CUTANEOS 
-        System.out.println("****************************************************");
-        System.out.println(">>>> MEDICIONES DE LOS PLIEGUES CUTANEOS");
-        System.out.println("*Las siguentes medidas deben estar en milimetros*");
-        System.out.println("\tIngrese la medida del triceps: \n");
-        double triceps = in.nextDouble();
-        System.out.println("\tIngrese la medida del subescapular: \n");
-        double subescapular = in.nextDouble();
-        System.out.println("\tIngrese la medida del abdomen: \n");
-        double abdomen = in.nextDouble();
-        System.out.println("\tIngrese la medida del iliaco: \n");
-        double iliaco = in.nextDouble();
-        System.out.println("\tIngrese la medida del muslo: \n");
-        double muslo = in.nextDouble();
-        System.out.println("\tIngrese la medida de la pantorrilla: \n");
-        double pantorrilla = in.nextDouble();
-        System.out.println("\tIngrese la medida del pectoral: \n");
-        double pectoralPliegue = in.nextDouble();
-        System.out.println("****************************************************");
-        System.out.println(">>>>MEDICIONES DE LAS CIRCUNFENCIAS CORPORALES");
-        System.out.println("Las siguientes medidas deben estar en centimetros");
-        System.out.println("\tIngrese la medida del cuello: \n");
-        double cuello = in.nextDouble();
-        System.out.println("\tIngrese la medida del biceps derecho: \n");
-        double bicepsDer = in.nextDouble();
-        System.out.println("\tIngrese la medida del biceps izquierdo: \n");
-        double bicepsIzq = in.nextDouble();
-        System.out.println("\tIngrese la medida del pectoral solo para hombre: \n*si es mujer escriba 0*");
-        double pectoralH = in.nextDouble();
-        System.out.println("\tIngrese la medida de la espalda: \n");
-        double espalda = in.nextDouble();
-        System.out.println("\tIngrese la medida de la cintura se divide en 3\n\t1.Alta:");
-        double cintura1 = in.nextDouble();
-        System.out.println("\t2.Media\n"); 
-        double cintura2 = in.nextDouble();
-        System.out.println("\t3.Baja\n");
-        double cintura3 = in.nextDouble();
-        System.out.println("\tIngrese la medida de la cadera: \n");
-        double cadera = in.nextDouble();
-        System.out.println("\tIngrese la medida del muslo derecho: \n");
-        double musloDer = in.nextDouble();
-        System.out.println("\tIngrese la medida del muslo izquierdo: \n");
-        double musloIzq = in.nextDouble();
-        System.out.println("\tIngrese la medida de la pantorrilla derecha: \n");
-        double pantorrillaDer = in.nextDouble();
-        System.out.println("\tIngrese la medida de la pantorrilla izquierda: \n");
-        double pantorrillaIzq = in.nextDouble();
-        Mediciones newMedicion = new Mediciones(estatura,peso,frecCard,presArtSistolica,presArtDiastolica, 
-            cuello, bicepsDer, bicepsIzq,pectoralH,espalda,cintura1,cintura2,
-            cintura3,cadera,musloDer,musloIzq,pantorrillaDer,pantorrillaIzq, 
-            triceps,subescapular,abdomen,iliaco,muslo,pantorrilla,
+    public void obMedicion(double estatura, double peso, int frecCardiaca, int presArterialSistolica, int presArterialDiastolica, 
+            double cuello, double bicepsDer, double bicepsIzq, double pectoral, double espalda, double Cintura1, double Cintura2,
+            double Cintura3, double cadera, double musloDer, double musloIzq, double pantorrillaDer, double pantorrillaIzq, 
+            double triceps, double subescapular, double abdomen, double iliaco, double muslo, double pantorrilla,
+            double pectoralPliegue){
+//        System.out.println("");
+//        System.out.println(">>Lista de mediciones\n");
+//        System.out.println("Ingrese su estatura: \n *La medida debe estar en metros*\n");
+//        double estatura = in.nextDouble();
+//        System.out.println("Ingrese su peso: \n *La medida debe estar en kilogramos*\n");
+//        double peso = in.nextDouble();
+//        System.out.println("Ingrese su frecuencia cardiaca: \n *La medida debe estar en latidos por minuto*\n");
+//        int frecCard = in.nextInt();
+//        System.out.println("\tIngrese la medida del presion arterial.\n Son dos las cuales deben estar en milimetros de mercurio \n\t1.Sistolica: ");
+//        int presArtSistolica = in.nextInt();
+//        System.out.println("\n\t2.Diastolica: ");
+//        int presArtDiastolica = in.nextInt();
+//        
+//        //PLIEGUES CUTANEOS 
+//        System.out.println("****************************************************");
+//        System.out.println(">>>> MEDICIONES DE LOS PLIEGUES CUTANEOS");
+//        System.out.println("*Las siguentes medidas deben estar en milimetros*");
+//        System.out.println("\tIngrese la medida del triceps: \n");
+//        double triceps = in.nextDouble();
+//        System.out.println("\tIngrese la medida del subescapular: \n");
+//        double subescapular = in.nextDouble();
+//        System.out.println("\tIngrese la medida del abdomen: \n");
+//        double abdomen = in.nextDouble();
+//        System.out.println("\tIngrese la medida del iliaco: \n");
+//        double iliaco = in.nextDouble();
+//        System.out.println("\tIngrese la medida del muslo: \n");
+//        double muslo = in.nextDouble();
+//        System.out.println("\tIngrese la medida de la pantorrilla: \n");
+//        double pantorrilla = in.nextDouble();
+//        System.out.println("\tIngrese la medida del pectoral: \n");
+//        double pectoralPliegue = in.nextDouble();
+//        System.out.println("****************************************************");
+//        System.out.println(">>>>MEDICIONES DE LAS CIRCUNFENCIAS CORPORALES");
+//        System.out.println("Las siguientes medidas deben estar en centimetros");
+//        System.out.println("\tIngrese la medida del cuello: \n");
+//        double cuello = in.nextDouble();
+//        System.out.println("\tIngrese la medida del biceps derecho: \n");
+//        double bicepsDer = in.nextDouble();
+//        System.out.println("\tIngrese la medida del biceps izquierdo: \n");
+//        double bicepsIzq = in.nextDouble();
+//        System.out.println("\tIngrese la medida del pectoral solo para hombre: \n*si es mujer escriba 0*");
+//        double pectoralH = in.nextDouble();
+//        System.out.println("\tIngrese la medida de la espalda: \n");
+//        double espalda = in.nextDouble();
+//        System.out.println("\tIngrese la medida de la cintura se divide en 3\n\t1.Alta:");
+//        double cintura1 = in.nextDouble();
+//        System.out.println("\t2.Media\n"); 
+//        double cintura2 = in.nextDouble();
+//        System.out.println("\t3.Baja\n");
+//        double cintura3 = in.nextDouble();
+//        System.out.println("\tIngrese la medida de la cadera: \n");
+//        double cadera = in.nextDouble();
+//        System.out.println("\tIngrese la medida del muslo derecho: \n");
+//        double musloDer = in.nextDouble();
+//        System.out.println("\tIngrese la medida del muslo izquierdo: \n");
+//        double musloIzq = in.nextDouble();
+//        System.out.println("\tIngrese la medida de la pantorrilla derecha: \n");
+//        double pantorrillaDer = in.nextDouble();
+//        System.out.println("\tIngrese la medida de la pantorrilla izquierda: \n");
+//        double pantorrillaIzq = in.nextDouble();
+        Mediciones newMedicion = new Mediciones(estatura,peso,frecCardiaca,presArterialSistolica,presArterialDiastolica, 
+            cuello, bicepsDer, bicepsIzq, pectoral,espalda,Cintura1,Cintura2,
+            Cintura3,cadera, musloDer,musloIzq,pantorrillaDer, pantorrillaIzq, 
+            triceps, subescapular,abdomen,iliaco, muslo,pantorrilla,
             pectoralPliegue,sexo);
         listaMediciones.add(newMedicion);
         cantMediciones += 1;
@@ -191,7 +195,11 @@ public class Paciente {
         System.out.println("4.Correo electronico: "+ correoElectronico);
         System.out.println("5.Fecha de nacimiento: "+ fechaNacimiento);
         System.out.println("6.Programas: ");
-        System.out.println("7.Mediciones: ");
+        System.out.println("7.Mediciones");
+        for(Mediciones med: listaMediciones){
+            System.out.println("Fecha de medicion: "+ med.getFechaCreacion()+"\n");
+            med.verMedicioness();
+        }
     }
     
 }

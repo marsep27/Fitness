@@ -347,6 +347,19 @@ public class Mediciones {
     public void setPectoralPliegue(double pectoralPliegue) {
         this.pectoralPliegue = pectoralPliegue;
     }
-   
+       
+    public void verMedicioness() {
+        System.out.println("Estatura: " + estatura + "\n"+ "Peso: " + peso + "\n"+
+                "Frecuencia Cardiaca: " + frecCardiaca +"\n"+ "Presion Arterial Sistolica: " + presArterialSistolica + "\n"+
+                "Presion Arterial Diastolica: " + presArterialDiastolica +"\n"+ "Grasa Corporal: " + grasaCorporal +"\n"+
+                "Masa Muscular: " + masaMuscular +"\n"+ "Frecuecia Cardiaca: " + frecueCardiaca + "\n"+"Relacion Cintura-Cadera: " + 
+                reCinturaCadera +"\n"+"********Circunferencias corporales***********"+"\n"+"\n"+ "Cuello: " + cuello +"\n"+ "Biceps Derecho: " + bicepsDer +"\n"+ "Biceps Izq: " + bicepsIzq +"\n"+
+                "Pectoral: " + pectoral +"\n"+ "Espalda: " + espalda +"\n"+ "Cintura1: " + Cintura1 + "\n"+"Cintura2: " + Cintura2 + "\n"+
+                "Cintura3: " + Cintura3 +"\n"+ "Cadera: " + cadera +"\n"+ "Muslo Derecho: " + musloDer +"\n"+ "Muslo Izquierdo: " + 
+                musloIzq +"\n"+ "Pantorrilla Dererecha: " + pantorrillaDer +"\n"+ "Pantorrilla Izquierda: " + pantorrillaIzq + "\n"+
+                "*********Pliegues cutaneos********\n"+"Triceps: " + triceps +"\n"+ "Subescapular: " + subescapular +"\n"+ "Abdomen: " + abdomen + "\n"+"Iliaco: " + iliaco + "\n"+
+                "Muslo: " + muslo +"\n"+ "Pantorrilla: " + pantorrilla +"\n"+ "Pectoral: " + pectoralPliegue+"\n");
+    }
+    
     
 }

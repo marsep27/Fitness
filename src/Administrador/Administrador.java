@@ -35,6 +35,10 @@ public class Administrador {
       Scanner in = new Scanner(System.in);// El scanner in lee las entradas
       public ArrayList<String> listNombres = new ArrayList();
       Maquina maquina;
+      public ArrayList<String> listMaquinas = new ArrayList<>(//Maquinas del gimnacio
+      Arrays.asList("Pelota de balance","Mini trampolín","Escaladora","Remadora","Prensa de piernas","Mesa de pilates"
+                    ,"Bicicleta de spinning","Bicicleta recostada","Elíptica","Caminadora","Sin maquina","Mancuernas",
+                    "Ligas","Maquina con pesas y soportes","Maquina Smith","Banca para ejercicios"));
    
     
             public void agregarPaciente(String pNombre, String pSexo, String pNumIdentificacion, String pTelefono, String pCorreoElectronico, String pFechaNacimiento){
@@ -69,93 +73,89 @@ public class Administrador {
 
             }
             
-            public void modificarPaciente(){
-                /*Modifica uno de los atributos de un cliente en especifico*/
-                        listaPacientes();//Llama funcion que imprime la lista de pacientes
-                        System.out.println("Elija el paciente que quiere modificar: ");
-                        int client = in.nextInt();//Guarda el indice de la lista en el que se encuentra el cliente
-                        paciente1 =listaPacientes.get(client-1);//Guarda el paciente elegido
-                        boolean volver = true;//Boolean para salir del ciclo
-                        while (volver == true){//Ciclo para ver los datos
-                        System.out.println(">>Datos del cliente seleccionado");
-                        paciente1.verPaciente();//Imprime los datos del cliente seleccionado
-                        System.out.println("Elija el numero del dato que quiere modificar: ");
-                        int dato = in.nextInt();//lee el numero del dato a modificar
-                        boolean salir = false;//Boolean para salir del ciclo
-                        while(salir == false){//Ciclo para modificar los datos
-                        switch(dato){
-                            case 1: 
-                                System.out.println(">>Cambiando nombre");
-                                System.out.println("Ingrese el nuevo nombre: ");
-                                String nom = in.nextLine();//Lee el nuevo nombre
-                                paciente1.setNombre(nom);//Modifica el nombre
-                                System.out.println("Se actualizo exitosamente el nombre");
-                                volver = false;//Para salir del ciclo de cambio de datos
-                            case 2:
-                                System.out.println(">>Cambiando el numero de identificacion");
-                                System.out.println("Ingrese el nuevo numero de identificacion: ");
-                                String iden = in.nextLine();//Lee el nuevo numero de identificacion
-                                boolean i1 = vericarCedula(iden);//Verifica que sea valida la entrada
-                                if(i1){//Si es valida
-                                paciente1.setNumIdentificacion(iden);//Modifica el numero de identificacion
-                                System.out.println("Se actualizo exitosamente el numero de identificacion");
-                                volver = false;//Salir del ciclo de modificar datos
-                                }else{System.out.println("Entrada invalida"); salir = true;}//Si no es valida pide nuevamente que ingrese el dato
-                             
-                            case 3: 
-                                System.out.println(">>Cambiando el numero de telefono");
-                                System.out.println("Ingrese el nuevo numero de telefono:");
-                                String tel = in.nextLine();//Lee el numero de telefono
-                                boolean i2 = vericarTel(tel);//Verifica que este correcto
-                                if(i2){//Si esta correcto
-                                paciente1.setTeléfono(tel);//Cambia el numero
-                                System.out.println("Se actualizo exitosamente el telefono");
-                                volver = false;//Salir del ciclo
-                                }else{System.out.println("Entrada invalida"); salir = true;}//Si esta incorrecto pide que lo ingrese nuevamente
-                            case 4: 
-                                System.out.println(">>Cambiando correo electronico");
-                                System.out.println("Ingrese el nuevo correo electronico: ");
-                                String co = in.nextLine();//Lee el nuevo correo 
-                                boolean  i3 = vericarCorreo(co);//Verifica que el correo este correcto
-                                if(i3){//Si esta correcto
-                                paciente1.setCorreoElectrónico(co);//Modifica el correo
-                                System.out.println("Se actualizo exitosamente el correo");
-                                volver = false;//Para salir del ciclo
-                                }else{System.out.println("Entrada invalida"); salir = true;}//Si esta incorrecto pide que lo ingrese nuevamente
-                            case 5: 
-                                System.out.println("Cambiando la fecha de nacimiento");
-                                System.out.println("Ingrese la nueva fecha de nacimiento: ");
-                                String nac = in.nextLine();//Lee la fecha de nacimiento
-                                paciente1.setFechaNacimiento(nac);//Cambia la fecha
-                                System.out.println("Se actualizo exitosamente la fecha de nacimiento");
-                                volver = false;//Sale del ciclo
-                            case 6:
-                                System.out.println("El numero de programas no se puede modificar");
-                                volver = false;
-                            case 7: 
-                                System.out.println("El numero de mediciones no se puede modificar");
-                                volver = false;
-                        
-                            }
-                
-                        }
-                      }
-                    }
+//            public void modificarPaciente(){//FAlta revisar o eleminar
+//                /*Modifica uno de los atributos de un cliente en especifico*/
+//                        listaPacientes();//Llama funcion que imprime la lista de pacientes
+//                        System.out.println("Elija el paciente que quiere modificar: ");
+//                        int client = in.nextInt();//Guarda el indice de la lista en el que se encuentra el cliente
+//                        paciente1 =listaPacientes.get(client-1);//Guarda el paciente elegido
+//                        boolean volver = true;//Boolean para salir del ciclo
+//                        while (volver == true){//Ciclo para ver los datos
+//                        System.out.println(">>Datos del cliente seleccionado");
+//                        paciente1.verPaciente();//Imprime los datos del cliente seleccionado
+//                        System.out.println("Elija el numero del dato que quiere modificar: ");
+//                        int dato = in.nextInt();//lee el numero del dato a modificar
+//                        boolean salir = false;//Boolean para salir del ciclo
+//                        while(salir == false){//Ciclo para modificar los datos
+//                        switch(dato){
+//                            case 1: 
+//                                System.out.println(">>Cambiando nombre");
+//                                System.out.println("Ingrese el nuevo nombre: ");
+//                                String nom = in.nextLine();//Lee el nuevo nombre
+//                                paciente1.setNombre(nom);//Modifica el nombre
+//                                System.out.println("Se actualizo exitosamente el nombre");
+//                                volver = false;//Para salir del ciclo de cambio de datos
+//                            case 2:
+//                                System.out.println(">>Cambiando el numero de identificacion");
+//                                System.out.println("Ingrese el nuevo numero de identificacion: ");
+//                                String iden = in.nextLine();//Lee el nuevo numero de identificacion
+//                                boolean i1 = vericarCedula(iden);//Verifica que sea valida la entrada
+//                                if(i1){//Si es valida
+//                                paciente1.setNumIdentificacion(iden);//Modifica el numero de identificacion
+//                                System.out.println("Se actualizo exitosamente el numero de identificacion");
+//                                volver = false;//Salir del ciclo de modificar datos
+//                                }else{System.out.println("Entrada invalida"); salir = true;}//Si no es valida pide nuevamente que ingrese el dato
+//                             
+//                            case 3: 
+//                                System.out.println(">>Cambiando el numero de telefono");
+//                                System.out.println("Ingrese el nuevo numero de telefono:");
+//                                String tel = in.nextLine();//Lee el numero de telefono
+//                                boolean i2 = vericarTel(tel);//Verifica que este correcto
+//                                if(i2){//Si esta correcto
+//                                paciente1.setTeléfono(tel);//Cambia el numero
+//                                System.out.println("Se actualizo exitosamente el telefono");
+//                                volver = false;//Salir del ciclo
+//                                }else{System.out.println("Entrada invalida"); salir = true;}//Si esta incorrecto pide que lo ingrese nuevamente
+//                            case 4: 
+//                                System.out.println(">>Cambiando correo electronico");
+//                                System.out.println("Ingrese el nuevo correo electronico: ");
+//                                String co = in.nextLine();//Lee el nuevo correo 
+//                                boolean  i3 = vericarCorreo(co);//Verifica que el correo este correcto
+//                                if(i3){//Si esta correcto
+//                                paciente1.setCorreoElectrónico(co);//Modifica el correo
+//                                System.out.println("Se actualizo exitosamente el correo");
+//                                volver = false;//Para salir del ciclo
+//                                }else{System.out.println("Entrada invalida"); salir = true;}//Si esta incorrecto pide que lo ingrese nuevamente
+//                            case 5: 
+//                                System.out.println("Cambiando la fecha de nacimiento");
+//                                System.out.println("Ingrese la nueva fecha de nacimiento: ");
+//                                String nac = in.nextLine();//Lee la fecha de nacimiento
+//                                paciente1.setFechaNacimiento(nac);//Cambia la fecha
+//                                System.out.println("Se actualizo exitosamente la fecha de nacimiento");
+//                                volver = false;//Sale del ciclo
+//                            case 6:
+//                                System.out.println("El numero de programas no se puede modificar");
+//                                volver = false;
+//                            case 7: 
+//                                System.out.println("El numero de mediciones no se puede modificar");
+//                                volver = false;
+//                        
+//                            }
+//                
+//                        }
+//                      }
+//                    }
 
             
             
             
-            public void borrarPaciente(){
+            public void borrarPaciente(Paciente paciente1){
                 /*Borra un paciente junto con sus mediciones y programas*/
-                        listaPacientes();//Imprime la lista de paciente
-                        System.out.println("Elija el paciente que quiere borrar: ");
-                        int client = in.nextInt();//Lee el numero del paciente que quiere borrar
-                        paciente1 =listaPacientes.get(client-1);//Accede al paciente y lo guarda en una variable
                         System.out.println("“El paciente "+ paciente1.getNombre()+ " será eliminado del sistema. \n"//Mensaje de confirmacion
                                 + "Cuenta con" + paciente1.getCantMediciones()+" mediciones y " + paciente1.getCantProgramas()
                                 + " programas de entrenamiento.\n ¿Está seguro que desea eliminarlo?”\n1.Confirmar\n2.Cancelar");
                         int op = in.nextInt();//lee la respuesta de la confirmacion
-                        if(op == 1){listaPacientes.remove(client-1);}else{/*regresa al listado de pacientes*/}//Si el usuario confirma lo borra sino no
+                        if(op == 1){listaPacientes.remove(paciente1);}else{/*regresa al listado de pacientes*/}//Si el usuario confirma lo borra sino no
                
                 }
             

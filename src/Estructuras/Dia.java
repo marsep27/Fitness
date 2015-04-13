@@ -41,9 +41,7 @@ public class Dia {
                 "Desplantes con barra" , "Sentadilla libre" ,"Sentadilla libre individual" ,"¼ de sentadilla con mancuernas" ,"½ Sentadilla con mancuernas" ,
                 "Sentadilla profunda mancuernas" ,"Sentadilla con barra" ,"Sentadilla en máquina Smith" ,"Step con mancuernas en banca"));
     
-    public ArrayList<String> listMaquinas = new ArrayList<>(//Maquinas del gimnacio
-      Arrays.asList("Pelota de balance","Mini trampolín","Escaladora","Remadora","Prensa de piernas","Mesa de pilates"
-                    ,"Bicicleta de spinning","Bicicleta recostada","Elíptica","Caminadora","Sin maquina","Mancuernas","Ligas","Maquina con pesas y soportes","Maquina Smith","Banca para ejercicios"));
+    
     
     private ArrayList <Ejercicio> rutina = new ArrayList<>();
     private String dia; 
@@ -97,8 +95,9 @@ public class Dia {
     }
     
     public void verDia(){
+        System.out.println(dia);
             for (Ejercicio ejer : rutina) {
-                   ejer.toString();
+                   ejer.verEjercicio();
         }
     }
 }

@@ -72,9 +72,13 @@ public class ProgramaDeEntrenamiento {
     public void eliminaDia(Dia dia){
         dias.remove(dia);
     }
-    
-    public void verPrograma(){
-        
-    
+
+    public void verProgramas() {
+        System.out.println("Titulo: " + Titulo +"\n" +"Descripcion: " + Descripcion +"\n" + "DiaInicio: " + DiaInicio +"\n" + "DiaFinal: " + DiaFinal+"\n");
+        for(Dia d: dias){
+            
+        }
     }
+    
+    
 }

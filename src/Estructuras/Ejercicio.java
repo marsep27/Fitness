@@ -104,9 +104,10 @@ public class Ejercicio {
         this.tiempoDescanso = tiempoDescanso;
     }
 
-    @Override
-    public String toString() {
-        return "Ejercicio{" + "Nombre=" + Nombre + ", Series=" + Series + ", Repeticiones=" + Repeticiones + ", duracion=" + duracion + ", maquina=" + maquina + ", peso1=" + peso1 + ", peso2=" + peso2 + ", peso3=" + peso3 + ", tiempoDescanso=" + tiempoDescanso + '}';
+    public void verEjercicio() {
+        System.out.println("Ejercicio\n" + "Nombre: " + Nombre +"\n"+ "Series: " + Series + "\n"+"Repeticiones: " + Repeticiones +
+                "\n"+"Duracion: " + duracion +"\n"+ "Maquina: " + maquina +"\n"+ "Peso1: " + peso1 +"\n"+ "Peso2: " + peso2 + "\n"+"Peso3:" + peso3 + "\n"+
+                "Tiempo de descanso: " + tiempoDescanso +"\n");
     }
     
     

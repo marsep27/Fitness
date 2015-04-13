@@ -81,6 +81,8 @@ public class Maquina {
         this.Descripcion = Descripcion;
     }    
    
+    
+    
 }
 
 
