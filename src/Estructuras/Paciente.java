@@ -222,6 +222,35 @@ public class Paciente {
     
     }
     
-}
+    public void eliminarMedicion(Mediciones medicion){
+        listaMediciones.remove(medicion);
+    }
+    
+    public void verMedicion(Mediciones med){
+        System.out.println("Fecha de medicion: "+ med.getFechaCreacion()+"\n");
+        med.verMedicioness();
+        
+    }
+
+    public void verListaDeMediciones(){
+        for(Mediciones med: listaMediciones){
+            System.out.println("Fecha de medicion: "+ med.getFechaCreacion()+"\n");
+            med.verMedicioness();
+        }
+    }
+    public void eliminarProgramaEntre(ProgramaDeEntrenamiento program){
+            program.eliminarPrograma();
+    }
+    
+    public void verProgramaEntre(ProgramaDeEntrenamiento program){
+        program.verProgramas();
+    
+    }
+    
+    
+    
+ }
+    
+
 
 

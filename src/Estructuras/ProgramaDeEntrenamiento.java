@@ -87,4 +87,8 @@ public class ProgramaDeEntrenamiento {
         dias.clear();
     }
     
+    public void eliminarDia(Dia dia){
+        dia.eliminarDia();
+    }
+    
 }
