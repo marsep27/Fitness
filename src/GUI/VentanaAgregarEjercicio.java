@@ -45,7 +45,7 @@ public class VentanaAgregarEjercicio extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jScrollPane2 = new javax.swing.JScrollPane();
         btnAceptar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
 
         setIconifiable(true);
         setTitle("AgregarEjercicio");
@@ -111,10 +111,10 @@ public class VentanaAgregarEjercicio extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton2.setText("Salir");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
 
@@ -155,7 +155,7 @@ public class VentanaAgregarEjercicio extends javax.swing.JInternalFrame {
                 .addGap(240, 240, 240)
                 .addComponent(btnAceptar)
                 .addGap(45, 45, 45)
-                .addComponent(jButton2)
+                .addComponent(btnSalir)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -199,7 +199,7 @@ public class VentanaAgregarEjercicio extends javax.swing.JInternalFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAceptar)
-                    .addComponent(jButton2))
+                    .addComponent(btnSalir))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -245,20 +245,20 @@ public class VentanaAgregarEjercicio extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAceptarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         this.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnSalirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptar;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JTextField fieldDescanso;
     private javax.swing.JTextField fieldPeso1;
     private javax.swing.JTextField fieldPeso2;
     private javax.swing.JTextField fieldPeso3;
     private javax.swing.JTextField fieldRepeticiones;
     private javax.swing.JTextField fieldSeries;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
