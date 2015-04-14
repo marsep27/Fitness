@@ -9,12 +9,12 @@ package GUI;
  *
  * @author Marco
  */
-public class VentanaAgregarMedidas extends javax.swing.JInternalFrame {
+public class VentanaModificarMedidas extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form VentanaMedidas
      */
-    public VentanaAgregarMedidas() {
+    public VentanaModificarMedidas() {
         initComponents();
     }
 
@@ -116,7 +116,7 @@ public class VentanaAgregarMedidas extends javax.swing.JInternalFrame {
         btnLimpiar = new javax.swing.JButton();
 
         setIconifiable(true);
-        setTitle("Agregar Medidas");
+        setTitle("Modificar Medidas");
 
         panelAgregarMedidas.setBackground(new java.awt.Color(0, 153, 102));
 
@@ -181,6 +181,7 @@ public class VentanaAgregarMedidas extends javax.swing.JInternalFrame {
             }
         });
 
+        fieldPectoralH.setText("0");
         fieldPectoralH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fieldPectoralHActionPerformed(evt);
@@ -359,7 +360,7 @@ public class VentanaAgregarMedidas extends javax.swing.JInternalFrame {
 
         jLabel57.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/medidas.png"))); // NOI18N
 
-        btnAgregarMedidas.setText("Agregar Medidas");
+        btnAgregarMedidas.setText("Modificar Medidas");
 
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {

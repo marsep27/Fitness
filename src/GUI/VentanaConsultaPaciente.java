@@ -31,7 +31,7 @@ public class VentanaConsultaPaciente extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jButton1 = new javax.swing.JButton();
 
-        setClosable(true);
+        setIconifiable(true);
         setTitle("Consulta");
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 102));

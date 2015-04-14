@@ -34,6 +34,7 @@ public class Administrador {
       public ArrayList<String> listCedulas = new ArrayList();//Guarda todas las cedulas de los pacientes
       Scanner in = new Scanner(System.in);// El scanner in lee las entradas
       public ArrayList<String> listNombres = new ArrayList();
+      public ArrayList<String> listMaquinas = new ArrayList();
       Maquina maquina;
       Almacen almacen = new Almacen();
       public ArrayList<String> listMaquinas = new ArrayList<>(//Maquinas del gimnacio

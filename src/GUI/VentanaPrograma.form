@@ -3,7 +3,7 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
   <Properties>
     <Property name="iconifiable" type="boolean" value="true"/>
-    <Property name="title" type="java.lang.String" value="Mediciones"/>
+    <Property name="title" type="java.lang.String" value="Programa"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -44,25 +44,26 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="202" max="-2" attributes="0"/>
-                  <EmptySpace pref="10" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" pref="232" max="-2" attributes="0"/>
+                          <EmptySpace pref="12" max="32767" attributes="0"/>
+                      </Group>
                       <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="btnAgregarMediciones" min="-2" pref="131" max="-2" attributes="0"/>
+                              <Component id="btnAgregarPrograma" min="-2" pref="131" max="-2" attributes="0"/>
                               <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                   <Component id="btnVer" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="btnModificarMediciones" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="btnModificarPrograma" alignment="0" max="32767" attributes="0"/>
                                   <Component id="btnBorrar" alignment="0" min="-2" pref="131" max="-2" attributes="0"/>
                               </Group>
                               <Component id="btnSalir" alignment="0" min="-2" pref="131" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -71,25 +72,25 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnAgregarMediciones" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnModificarMediciones" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jLabel1" pref="244" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="btnAgregarPrograma" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnModificarPrograma" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                           <Component id="btnVer" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                           <Component id="btnBorrar" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                           <Component id="btnSalir" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="8" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jScrollPane1" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -99,12 +100,12 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
         </Container>
-        <Component class="javax.swing.JButton" name="btnAgregarMediciones">
+        <Component class="javax.swing.JButton" name="btnAgregarPrograma">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Agregar Mediciones"/>
+            <Property name="text" type="java.lang.String" value="Agregar Programa"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarMedicionesActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarProgramaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnSalir">
@@ -118,26 +119,26 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Recursos/medidas.png"/>
+              <Image iconType="3" name="/Recursos/calendario.png"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btnModificarMediciones">
+        <Component class="javax.swing.JButton" name="btnModificarPrograma">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Modificar Mediciones"/>
+            <Property name="text" type="java.lang.String" value="Modificar Programa"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnModificarMedicionesActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnModificarProgramaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnBorrar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Borrar Mediciones"/>
+            <Property name="text" type="java.lang.String" value="Borrar Programa"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnVer">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Ver Mediciones"/>
+            <Property name="text" type="java.lang.String" value="Ver Programa"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVerActionPerformed"/>

@@ -45,7 +45,7 @@ public class VentanaAcerca extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        lblWeb = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -69,12 +69,12 @@ public class VentanaAcerca extends javax.swing.JInternalFrame {
         jLabel4.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
         jLabel4.setText("CLICK");
 
-        jLabel5.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/web.png"))); // NOI18N
-        jLabel5.setText("AQUÍ");
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblWeb.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 14)); // NOI18N
+        lblWeb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/web.png"))); // NOI18N
+        lblWeb.setText("AQUÍ");
+        lblWeb.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
+                lblWebMouseClicked(evt);
             }
         });
 
@@ -111,7 +111,7 @@ public class VentanaAcerca extends javax.swing.JInternalFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel4)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel5))
+                                        .addComponent(lblWeb))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -150,7 +150,7 @@ public class VentanaAcerca extends javax.swing.JInternalFrame {
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
+                            .addComponent(lblWeb)
                             .addComponent(jLabel4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel6)
@@ -179,18 +179,18 @@ public class VentanaAcerca extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+    private void lblWebMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblWebMouseClicked
         try {
         if (Desktop.isDesktopSupported()) {
         Desktop desktop = Desktop.getDesktop();
         if (desktop.isSupported(Desktop.Action.BROWSE)) {
-        desktop.browse(new URI("http://google.co.cr"));
+        desktop.browse(new URI("http://marsep27.wix.com/fitness"));
         }
         }
         } catch (Exception e) {
         e.printStackTrace();
         } 
-    }//GEN-LAST:event_jLabel5MouseClicked
+    }//GEN-LAST:event_lblWebMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -199,11 +199,11 @@ public class VentanaAcerca extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblWeb;
     // End of variables declaration//GEN-END:variables
 }

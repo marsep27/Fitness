@@ -43,6 +43,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         escritorio.add(VentanaAcerca.getInstance());
         escritorio.add(VentanaListaPacientes.getInstance());
         escritorio.add(VentanaMediciones.getInstance());
+        escritorio.add(VentanaPrograma.getInstance());
+        escritorio.add(VentanaEjercicios.getInstance());
+        escritorio.add(VentanaMaquinas.getInstance());
         setVisible(true);
     }
 
@@ -65,8 +68,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         crearPaciente = new javax.swing.JMenuItem();
         consultarPaciente = new javax.swing.JMenuItem();
         listaPaciente = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        Medidas = new javax.swing.JMenuItem();
+        Programa = new javax.swing.JMenuItem();
         menuEjercicios = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
@@ -102,6 +105,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         menuPaciente.setText("Paciente");
         menuPaciente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         menuPaciente.setFont(new java.awt.Font("Copperplate Gothic Bold", 0, 14)); // NOI18N
+        menuPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuPacienteActionPerformed(evt);
+            }
+        });
 
         crearPaciente.setBackground(new java.awt.Color(204, 102, 0));
         crearPaciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/mas.jpg"))); // NOI18N
@@ -133,20 +141,25 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         menuPaciente.add(listaPaciente);
 
-        jMenuItem1.setBackground(new java.awt.Color(204, 102, 0));
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/medida.png"))); // NOI18N
-        jMenuItem1.setText("Medidas Pacientes");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        Medidas.setBackground(new java.awt.Color(204, 102, 0));
+        Medidas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/medida.png"))); // NOI18N
+        Medidas.setText("Medidas Pacientes");
+        Medidas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                MedidasActionPerformed(evt);
             }
         });
-        menuPaciente.add(jMenuItem1);
+        menuPaciente.add(Medidas);
 
-        jMenuItem2.setBackground(new java.awt.Color(204, 102, 0));
-        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/rutina.png"))); // NOI18N
-        jMenuItem2.setText("Rutinas Pacientes");
-        menuPaciente.add(jMenuItem2);
+        Programa.setBackground(new java.awt.Color(204, 102, 0));
+        Programa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/rutina.png"))); // NOI18N
+        Programa.setText("Programa Pacientes");
+        Programa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProgramaActionPerformed(evt);
+            }
+        });
+        menuPaciente.add(Programa);
 
         barraMenu.add(menuPaciente);
 
@@ -159,11 +172,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuItem3.setBackground(new java.awt.Color(204, 102, 0));
         jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/ejercicio.jpg"))); // NOI18N
         jMenuItem3.setText("Ejercicios");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         menuEjercicios.add(jMenuItem3);
 
         jMenuItem4.setBackground(new java.awt.Color(204, 102, 0));
         jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/maquina.jpg"))); // NOI18N
         jMenuItem4.setText("Maquinas");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         menuEjercicios.add(jMenuItem4);
 
         barraMenu.add(menuEjercicios);
@@ -233,13 +256,29 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         VentanaAcerca.getInstance().setVisible(true);
     }//GEN-LAST:event_acercaMouseClicked
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void MedidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MedidasActionPerformed
         VentanaMediciones.getInstance().setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_MedidasActionPerformed
 
     private void listaPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaPacienteActionPerformed
         VentanaListaPacientes.getInstance().setVisible(true);
     }//GEN-LAST:event_listaPacienteActionPerformed
+
+    private void menuPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPacienteActionPerformed
+        VentanaPrograma.getInstance().setVisible(true);
+    }//GEN-LAST:event_menuPacienteActionPerformed
+
+    private void ProgramaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProgramaActionPerformed
+        VentanaPrograma.getInstance().setVisible(true);
+    }//GEN-LAST:event_ProgramaActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        VentanaEjercicios.getInstance().setVisible(true);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        VentanaMaquinas.getInstance().setVisible(true);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -277,13 +316,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Medidas;
+    private javax.swing.JMenuItem Programa;
     private javax.swing.JMenu acerca;
     private javax.swing.JMenuBar barraMenu;
     private javax.swing.JMenuItem consultarPaciente;
     private javax.swing.JMenuItem crearPaciente;
     public static javax.swing.JDesktopPane escritorio;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem listaPaciente;

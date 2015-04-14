@@ -9,12 +9,12 @@ package GUI;
  *
  * @author Marco
  */
-public class VentanaAgregarMedidas extends javax.swing.JInternalFrame {
+public class VentanaVerMedidas extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form VentanaMedidas
      */
-    public VentanaAgregarMedidas() {
+    public VentanaVerMedidas() {
         initComponents();
     }
 
@@ -111,12 +111,10 @@ public class VentanaAgregarMedidas extends javax.swing.JInternalFrame {
         jLabel56 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel57 = new javax.swing.JLabel();
-        btnAgregarMedidas = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
-        btnLimpiar = new javax.swing.JButton();
 
         setIconifiable(true);
-        setTitle("Agregar Medidas");
+        setTitle("Ver Medidas");
 
         panelAgregarMedidas.setBackground(new java.awt.Color(0, 153, 102));
 
@@ -359,19 +357,10 @@ public class VentanaAgregarMedidas extends javax.swing.JInternalFrame {
 
         jLabel57.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/medidas.png"))); // NOI18N
 
-        btnAgregarMedidas.setText("Agregar Medidas");
-
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalirActionPerformed(evt);
-            }
-        });
-
-        btnLimpiar.setText("Limpiar");
-        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimpiarActionPerformed(evt);
             }
         });
 
@@ -401,23 +390,18 @@ public class VentanaAgregarMedidas extends javax.swing.JInternalFrame {
                         .addComponent(lblPresionArterial, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(10, 10, 10)))
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(panelAgregarMedidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblFrecuenciaCardiaca)
-                    .addComponent(btnAgregarMedidas))
-                .addGroup(panelAgregarMedidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelAgregarMedidasLayout.createSequentialGroup()
+                .addGroup(panelAgregarMedidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelAgregarMedidasLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(lblFrecuenciaCardiaca)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(fieldFreacuenciaCardiaca, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel52)
-                        .addGap(196, 196, 196))
+                        .addComponent(jLabel52))
                     .addGroup(panelAgregarMedidasLayout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(btnLimpiar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnSalir)
-                        .addGap(90, 90, 90))))
+                        .addGap(191, 191, 191)
+                        .addComponent(btnSalir)))
+                .addGap(196, 196, 196))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAgregarMedidasLayout.createSequentialGroup()
                 .addGroup(panelAgregarMedidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblCircunferencias, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -704,10 +688,7 @@ public class VentanaAgregarMedidas extends javax.swing.JInternalFrame {
                                     .addComponent(fieldFreacuenciaCardiaca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel52))
                                 .addGap(18, 18, Short.MAX_VALUE)
-                                .addGroup(panelAgregarMedidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btnAgregarMedidas)
-                                    .addComponent(btnSalir)
-                                    .addComponent(btnLimpiar))))
+                                .addComponent(btnSalir)))
                         .addContainerGap())
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
@@ -785,63 +766,8 @@ public class VentanaAgregarMedidas extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_fieldSubescapularActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        fieldEstatura.setText("");
-        fieldPeso.setText("");
-        fieldTricep.setText("");
-        fieldSubescapular.setText("");
-        fieldAbdomen.setText("");
-        fieldIliaco.setText("");
-        fieldMuslo.setText("");
-        fieldPectoral.setText("");
-        fieldPantorrilla.setText("");
-        fieldPectoralH.setText("0");
-        fieldCuello.setText("");
-        fieldBicepDer.setText("");
-        fieldBicepIzq.setText("");
-        fieldPectoral.setText("");
-        fieldEspalda.setText("");
-        fieldCintura1.setText("");
-        fieldCintura2.setText("");
-        fieldCintura3.setText("");
-        fieldCadera.setText("");
-        fieldMusloDer.setText("");
-        fieldMusloIzq.setText("");
-        fieldPantorrillaDer.setText("");
-        fieldPantorrillaIzq.setText("");
-        fieldFreacuenciaCardiaca.setText("");
-        fieldSistolica.setText("");
-        fieldDiastolica.setText("");
         this.setVisible(false);
     }//GEN-LAST:event_btnSalirActionPerformed
-
-    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-        fieldEstatura.setText("");
-        fieldPeso.setText("");
-        fieldTricep.setText("");
-        fieldSubescapular.setText("");
-        fieldAbdomen.setText("");
-        fieldIliaco.setText("");
-        fieldMuslo.setText("");
-        fieldPectoral.setText("");
-        fieldPantorrilla.setText("");
-        fieldPectoralH.setText("0");
-        fieldCuello.setText("");
-        fieldBicepDer.setText("");
-        fieldBicepIzq.setText("");
-        fieldPectoral.setText("");
-        fieldEspalda.setText("");
-        fieldCintura1.setText("");
-        fieldCintura2.setText("");
-        fieldCintura3.setText("");
-        fieldCadera.setText("");
-        fieldMusloDer.setText("");
-        fieldMusloIzq.setText("");
-        fieldPantorrillaDer.setText("");
-        fieldPantorrillaIzq.setText("");
-        fieldFreacuenciaCardiaca.setText("");
-        fieldSistolica.setText("");
-        fieldDiastolica.setText("");
-    }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void fieldTricepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldTricepActionPerformed
         // TODO add your handling code here:
@@ -861,8 +787,6 @@ public class VentanaAgregarMedidas extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgregarMedidas;
-    private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JTextField fieldAbdomen;
     private javax.swing.JTextField fieldBicepDer;
